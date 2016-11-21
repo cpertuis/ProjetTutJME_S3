@@ -1,4 +1,5 @@
 package model;
+import java.util.Random;
 
 /**
  * Created by raphael on 11/11/16.
@@ -6,12 +7,16 @@ package model;
 public class ModelEntite {
 
     protected int vie;
+    protected int force;
+    protected int magie;
+    protected int defencePhy;
+    protected int defenceMag;
     protected int niveau;
     protected int vieMax = vie;
     protected enum Genre {
         HOMME("un homme"),
         FEMMME("une femme"),
-        NONDEF("Indefinie");
+        NONDEF("Indefini");
 
         private String genre = "";
 
@@ -23,12 +28,15 @@ public class ModelEntite {
             return genre;
         }
     }
+    Random input = new Random();
     protected String nom;
     Genre baseGenre = Genre.NONDEF;
     Genre genre;
 
     ModelEntite(String nom){
         vie = 150;
+        force = input.nextInt(20);
+        magie = input.nextInt(30);
         niveau = 1;
         this.nom = nom;
         this.genre = baseGenre;
@@ -54,6 +62,22 @@ public class ModelEntite {
 
     void setVie(int vie){
         this.vie = vie;
+    }
+    
+    void setForce(int force){
+        this.force = focre;
+    }
+    
+    void setDefencePhy(int defencePhy){
+        this.defencePhy = defencePhy;
+    }
+    
+    void setDefenceMag(int defenceMag){
+        this.defenceMag = defenceMag;
+    }
+    
+    void setMagie(int magie){
+        this.magie = magie;
     }
 
     void setNiveau(int niveau){
@@ -86,7 +110,23 @@ public class ModelEntite {
     int getVie(){
         return vie;
     }
+    
+    int getDefPhy(){
+        return defencePhy;
+    }
+    
+    int getDefMag(){
+        return defenceMag;
+    }
+    
+    int getForce(){
+        return force;
+    }
 
+    int getMagie(){
+        return magie;
+    }
+    
     int getNiveau(){
         return niveau;
     }
