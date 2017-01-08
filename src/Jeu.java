@@ -1,4 +1,5 @@
 import model.ModelHero;
+import view.CreationPersonnage;
 import view.FenetreJeu;
 
 public class Jeu {
@@ -11,7 +12,8 @@ public class Jeu {
                         m.setClasse(3);
                         m.gainNiveau();
                         m.perteVie(5);
-                        FenetreJeu fenetreJeu = new FenetreJeu(m);
+                        CreationPersonnage creationPersonnage = new CreationPersonnage();
+                        //FenetreJeu fenetreJeu = new FenetreJeu(m);
                     }
                 }
         );
