@@ -1,4 +1,4 @@
-import java.util.Random;
+/*import java.util.Random;
 import java.util.Scanner;
 
 import model.ModelMob;
@@ -77,13 +77,13 @@ public class Combats {
             
     	}
     	if(joueur.getVie() > 0){
-	    	System.out.println("Vous avez gagné");
+	    	System.out.println("Vous avez gagnï¿½");
 	    	joueur.print();
 	    	monstre.print();
 	    	return joueur;
     	}else{
-    		System.out.println("Vous avez perdu, "+((ModelMob) monstre).getClasse()+" "+monstre.getNom()+" a gagné");
+    		System.out.println("Vous avez perdu, "+((ModelMob) monstre).getClasse()+" "+monstre.getNom()+" a gagnï¿½");
     		return monstre;
     	}
     }
-}
+}*/

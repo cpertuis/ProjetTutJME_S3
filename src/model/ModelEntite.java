@@ -147,10 +147,10 @@ public class ModelEntite {
         niveau++;
 
         if((vieMax / 2) % 2 != 0){
-            setVie(vieMax + (vieMax + 1)/2);
+            setVieMax(vieMax + (vieMax + 1)/2);
         }
         else{
-            setVie(vieMax + vieMax/2);
+            setVieMax(vieMax + vieMax/2);
         }
 
         vie = vieMax;
