@@ -42,7 +42,8 @@ public class ModelHero extends ModelEntite {
             switch (i){
                 case 1 :
                     classe = Classe.ASSASSIN;
-                    vie = 300;
+                    vieMax = 300;
+                    vie = vieMax;
                     this.setDefenceMag(10);
                     this.setDefencePhy(6);
                     this.setForce(20);
@@ -50,7 +51,8 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 2 :
                     classe = Classe.GUERRIER;
-                    vie = 500;
+                    vieMax = 500;
+                    vie = vieMax;
                     this.setDefenceMag(15);
                     this.setDefencePhy(20);
                     this.setForce(8);
@@ -58,7 +60,8 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 3 :
                     classe = Classe.MAGE;
-                    vie = 250;
+                    vieMax = 250;
+                    vie = vieMax;
                     this.setDefenceMag(15);
                     this.setDefencePhy(8);
                     this.setForce(6);
@@ -66,7 +69,8 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 4 :
                     classe = Classe.TRAVELERS;
-                    vie = 350;
+                    vieMax = 350;
+                    vie = vieMax;
                     this.setDefenceMag(10);
                     this.setDefencePhy(8);
                     this.setForce(14);

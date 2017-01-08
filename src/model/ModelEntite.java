@@ -60,6 +60,10 @@ public class ModelEntite {
         this.vie = vie;
     }
 
+    void setVieMax(int vieMax){
+        this.vieMax = vieMax;
+    }
+
 	void setForce(int force){
         this.force = force;
     }
@@ -142,12 +146,14 @@ public class ModelEntite {
     public void gainNiveau(){
         niveau++;
 
-        if((vie / 2) % 2 != 0){
-            setVie(vie + (vie + 1)/2);
+        if((vieMax / 2) % 2 != 0){
+            setVie(vieMax + (vieMax + 1)/2);
         }
         else{
-            setVie(vie + vie/2);
+            setVie(vieMax + vieMax/2);
         }
+
+        vie = vieMax;
     }
 
     public boolean estMort(){
