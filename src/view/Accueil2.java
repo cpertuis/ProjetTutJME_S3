@@ -33,7 +33,6 @@ public class Accueil2 extends JFrame{
     public JButton exit;
 
     public Accueil2(){
-
         initAttribut();
         creerWidget();
         pack();
