@@ -60,6 +60,22 @@ public class ModelEntite {
         this.vie = vie;
     }
 
+	void setForce(int force){
+        this.force = force;
+    }
+    
+    void setDefencePhy(int defencePhy){
+        this.defencePhy = defencePhy;
+    }
+    
+    void setDefenceMag(int defenceMag){
+        this.defenceMag = defenceMag;
+    }
+    
+    void setMagie(int magie){
+        this.magie = magie;
+    }
+	
     void setNiveau(int niveau){
         this.niveau = niveau;
     }
