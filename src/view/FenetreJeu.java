@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-public class Fenetre extends JFrame {
+public class FenetreJeu extends JFrame {
 
     protected ModelHero modelH;
 
@@ -29,7 +29,7 @@ public class Fenetre extends JFrame {
 
     public JTextArea tableauAll;
 
-    public Fenetre(ModelHero modelH) {
+    public FenetreJeu(ModelHero modelH) {
 
         this.modelH=modelH;
         setTitle("RPG");
@@ -37,8 +37,8 @@ public class Fenetre extends JFrame {
         plateauDeJeu();
         setResizable(false);
         pack();
-        setVisible(true);
         setLocationRelativeTo(null);
+        setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 

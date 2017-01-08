@@ -1,7 +1,5 @@
-import controller.ControlGroup;
 import model.ModelHero;
-import view.Caracteristique;
-import view.Fenetre;
+import view.FenetreJeu;
 
 public class Jeu {
     public static void main(String[] args){
@@ -13,7 +11,7 @@ public class Jeu {
                         m.setClasse(3);
                         m.gainNiveau();
                         m.perteVie(5);
-                        Fenetre fenetre = new Fenetre(m);
+                        FenetreJeu fenetreJeu = new FenetreJeu(m);
                     }
                 }
         );
