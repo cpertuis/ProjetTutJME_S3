@@ -56,31 +56,31 @@ public class ModelEntite {
         }
     }
 
-    void setVie(int vie){
+    public void setVie(int vie){
         this.vie = vie;
     }
 
-    void setVieMax(int vieMax){
+    public void setVieMax(int vieMax){
         this.vieMax = vieMax;
     }
 
-	void setForce(int force){
+    public void setForce(int force){
         this.force = force;
     }
-    
-    void setDefencePhy(int defencePhy){
+
+    public void setDefencePhy(int defencePhy){
         this.defencePhy = defencePhy;
     }
-    
-    void setDefenceMag(int defenceMag){
+
+    public void setDefenceMag(int defenceMag){
         this.defenceMag = defenceMag;
     }
-    
-    void setMagie(int magie){
+
+    public void setMagie(int magie){
         this.magie = magie;
     }
-	
-    void setNiveau(int niveau){
+
+    public void setNiveau(int niveau){
         this.niveau = niveau;
     }
 
@@ -127,19 +127,19 @@ public class ModelEntite {
         return nom;
     }
 
-    int getDefPhy(){
+    public  int getDefPhy(){
         return defencePhy;
     }
 
-    int getDefMag(){
+    public int getDefMag(){
         return defenceMag;
     }
 
-    int getForce(){
+    public int getForce(){
         return force;
     }
 
-    int getMagie(){
+    public int getMagie(){
         return magie;
     }
 
