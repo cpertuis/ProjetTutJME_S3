@@ -12,6 +12,7 @@ public class Jeu {
                         ModelHero m =new ModelHero(20,1,"Julius");
                         m.setClasse(3);
                         m.gainNiveau();
+                        m.perteVie(5);
                         Fenetre fenetre = new Fenetre(m);
                     }
                 }

@@ -6,7 +6,7 @@ package model;
 public class ModelEntite {
 
     protected int vie;
-    protected int vieMax = vie;
+    protected int vieMax;
     protected int niveau;
     protected int force;
     protected int magie;
@@ -164,7 +164,7 @@ public class ModelEntite {
     }
 
     public void perteVie(int degats){
-        vie -= degats;
+        setVie(vie-degats);
     }
 
     public void regenVie(){

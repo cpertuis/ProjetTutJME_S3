@@ -34,7 +34,7 @@ public class Caracteristique extends JFrame {
         sgenre= "Sexe : "+mHero.getGenre();
         sclasse= "Classe : "+mHero.getClasse();
         sniveau= "Niveau : "+mHero.getNiveau();
-        svie= "Vie : "+mHero.getVie()+"/"+mHero.getVie();
+        svie= "Vie : "+mHero.getVie()+"/"+mHero.getVieMax();
 
         nom = new JLabel(snom);
         genre = new JLabel(sgenre);
