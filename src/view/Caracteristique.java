@@ -22,10 +22,10 @@ public class Caracteristique extends JFrame {
         this.mHero=mHero;
         initAttribut();
         createWidget();
-        setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
         pack();
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 

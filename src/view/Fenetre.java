@@ -36,9 +36,9 @@ public class Fenetre extends JFrame {
         initJeu();
         plateauDeJeu();
         setResizable(false);
-        setLocationRelativeTo(null);
         pack();
         setVisible(true);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 

@@ -18,8 +18,8 @@ public class Quetes extends JFrame {
         createWidget();
         setResizable(false);
         setVisible(false);
-        setLocationRelativeTo(null);
         pack();
+        setLocationRelativeTo(null);
         controlButtonQuetes = new ControlButtonQuetes(this);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
