@@ -55,7 +55,7 @@ public class Accueil extends JFrame{
         creerMenu();
         creerWidget();
         pack();
-        setVisible(true);	                             // Affiche la fenetre
+        setVisible(true);	                             // Affiche la fenetreJeu
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Ferme avec la croix
         setLocationRelativeTo(null);                     // Affiche au milieu de l'écran
     }

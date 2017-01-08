@@ -2,7 +2,7 @@ package controller;
 
 import model.ModelHero;
 import view.Caracteristique;
-import view.Fenetre;
+import view.FenetreJeu;
 import view.Quetes;
 
 import java.awt.event.ActionEvent;
@@ -10,19 +10,19 @@ import java.awt.event.ActionListener;
 
 public class ControlButtonFenetre implements ActionListener {
     public ModelHero mHero;
-    public Fenetre fenetre;
+    public FenetreJeu fenetreJeu;
 
-    public ControlButtonFenetre(ModelHero mHero, Fenetre fenetre){
-        this.fenetre=fenetre;
+    public ControlButtonFenetre(ModelHero mHero, FenetreJeu fenetreJeu){
+        this.fenetreJeu = fenetreJeu;
         this.mHero=mHero;
-        fenetre.setInteraction(this);
+        fenetreJeu.setInteraction(this);
     }
     public void actionPerformed(ActionEvent actionEvent) {
-        if(actionEvent.getSource() ==  fenetre.buttonCaractéristique){
+        if(actionEvent.getSource() ==  fenetreJeu.buttonCaractéristique){
             new Caracteristique(mHero).display();
         }
 
-        if (actionEvent.getSource()== fenetre.buttonQuete){
+        if (actionEvent.getSource()== fenetreJeu.buttonQuete){
             new Quetes().display();
         }
     }
