@@ -8,15 +8,21 @@ public class ModelQuete {
     private String intituleQuete;
     private String contenueQuete;
     ModelObjectif objectif;
+    private boolean success;
 
     public ModelQuete(String intituleQuete, String contenueQuete){
         this.intituleQuete = intituleQuete;
         this.contenueQuete = contenueQuete;
         objectif = null;
+        success = false;
     }
 
-    boolean isSuccess(){
-        return false;
+    public boolean getSuccess(){
+        return success;
+    }
+
+    public void setSuccess(boolean b){
+        success = b;
     }
 
     public void ajoutObjectif(ModelObjectif objectif){
