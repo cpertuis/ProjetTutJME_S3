@@ -33,4 +33,8 @@ public class ModelObjectif {
         }
         return false;
     }
+
+    public String toString(){
+        return etatAvancementObjectif+"/"+objectif;
+    }
 }

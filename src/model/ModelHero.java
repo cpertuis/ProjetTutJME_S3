@@ -1,5 +1,7 @@
 package model;
 
+import com.jme3.bullet.control.KinematicRagdollControl;
+
 /**
  * Created by raphael on 11/11/16.
  */
@@ -27,14 +29,22 @@ public class ModelHero extends ModelEntite {
     Classe baseIntitule = Classe.BASECLASSE;
     Classe classe;
 
+    private boolean queteEnCours;
+
+    private ModelQuete queteCourante;
+
     public ModelHero(String nom){
         super(nom);
         this.classe = baseIntitule;
+        queteEnCours = false;
+        queteCourante = null;
     }
 
     public ModelHero(int vie, int niveau, String nom){
         super(vie,niveau,nom);
         this.classe = baseIntitule;
+        queteEnCours = false;
+        queteCourante = null;
     }
 
     public void setClasse(int i){
@@ -102,5 +112,13 @@ public class ModelHero extends ModelEntite {
 
     public Classe getClasse() {
         return classe;
+    }
+
+    public boolean getQueteEnCours(){
+        return queteEnCours;
+    }
+
+    public void setQueteEnCours(boolean b){
+        queteEnCours = b;
     }
 }

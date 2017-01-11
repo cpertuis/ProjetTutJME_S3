@@ -1,5 +1,7 @@
 package model;
 
+import jogamp.opengl.macosx.cgl.awt.MacOSXAWTCGLGraphicsConfigurationFactory;
+
 /**
  * Created by raphael on 13/12/16.
  */
@@ -7,13 +9,15 @@ public class ModelQuete {
 
     private String intituleQuete;
     private String contenueQuete;
-    ModelObjectif objectif;
+    private ModelObjectif objectif;
+    private ModelMob mob;
     private boolean success;
 
-    public ModelQuete(String intituleQuete, String contenueQuete){
-        this.intituleQuete = intituleQuete;
-        this.contenueQuete = contenueQuete;
-        objectif = null;
+    public ModelQuete(String _intituleQuete, String _contenueQuete, ModelMob _mob, ModelObjectif _objectif){
+        intituleQuete = _intituleQuete;
+        contenueQuete = _contenueQuete;
+        objectif = _objectif;
+        mob = _mob;
         success = false;
     }
 
@@ -33,6 +37,16 @@ public class ModelQuete {
         System.out.println("La quête que j'ai à vous proposez se nomme : "+intituleQuete+"." +
                            "\n" +
                            "\n"+contenueQuete+
-                           "\n"+objectif.toString());
+                           "\n"+mob.getNom()+" tués : "+objectif.toString());
+    }
+
+    public void verifQuete(){
+        if(objectif.getEtatAvancementObjectif() == objectif.getObjectif()){
+            setSuccess(true);
+        }
+    }
+
+    public void updateQuete(){
+
     }
 }

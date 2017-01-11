@@ -1,8 +1,11 @@
 import model.ModelHero;
+import view.Accueil2;
 import view.CreationPersonnage;
 import view.FenetreJeu;
 
 public class Jeu {
+
+
     public static void main(String[] args){
 
         javax.swing.SwingUtilities.invokeLater(
@@ -12,8 +15,7 @@ public class Jeu {
                         m.setClasse(3);
                         m.gainNiveau();
                         m.perteVie(5);
-                        CreationPersonnage creationPersonnage = new CreationPersonnage();
-                        //FenetreJeu fenetreJeu = new FenetreJeu(m);
+                        Accueil2 accueil = new Accueil2();
                     }
                 }
         );

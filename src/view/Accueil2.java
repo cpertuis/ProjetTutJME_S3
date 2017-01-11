@@ -1,6 +1,7 @@
 package view;
 
 import controller.ControlBouton;
+import controller.ControlBoutonAcceuil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +11,11 @@ import java.awt.*;
  */
 public class Accueil2 extends JFrame{
 
+
+
     /* Control Accueil */
 
-    protected ControlBouton controlBouton;
+    protected ControlBoutonAcceuil controlBoutonAcceuil;
 
         /* JPanel */
 
@@ -33,6 +36,7 @@ public class Accueil2 extends JFrame{
     public JButton exit;
 
     public Accueil2(){
+        controlBoutonAcceuil = new ControlBoutonAcceuil(this);
         initAttribut();
         creerWidget();
         pack();
@@ -61,9 +65,10 @@ public class Accueil2 extends JFrame{
         loadGame = new JButton("Charger une partie");
         exit = new JButton("Quitter");
 
-        newGame.addActionListener(controlBouton);
-        loadGame.addActionListener(controlBouton);
-        exit.addActionListener(controlBouton);
+
+        newGame.addActionListener(controlBoutonAcceuil);
+        loadGame.addActionListener(controlBoutonAcceuil);
+        exit.addActionListener(controlBoutonAcceuil);
     }
 
     public void creerWidget(){

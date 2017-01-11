@@ -1,14 +1,15 @@
 package controller;
 
 import view.Accueil2;
-import view.JME;
+import view.CreationPersonnage;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by charly on 08/01/17.
  */
-public class ControlBoutonAcceuil {
+public class ControlBoutonAcceuil implements ActionListener{
 
     /* Accueil */
 
@@ -20,7 +21,8 @@ public class ControlBoutonAcceuil {
 
     public void actionPerformed(ActionEvent event){
         if(event.getSource() == accueil.newGame){
-
+            accueil.dispose();
+            CreationPersonnage creationPersonnage = new CreationPersonnage();
         }
         if(event.getSource() == accueil.loadGame){
 
