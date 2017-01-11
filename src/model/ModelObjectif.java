@@ -7,15 +7,30 @@ import java.util.HashMap;
  */
 public class ModelObjectif {
 
-    private HashMap<String, Integer> objectif;
+    private int objectif;
+    private int etatAvancementObjectif;
 
-    public ModelObjectif(){
-        objectif = new HashMap<String, Integer>();
-
-        objectif.put("RemporterCombat2", 2);
+    public ModelObjectif(int _objectif){
+        objectif = _objectif;
+        etatAvancementObjectif = 0;
     }
 
-    public String toString(){
-        return("Gagner deux combats : 0/"+objectif.get("RemporterCombat2"));
+    public int getObjectif(){
+        return objectif;
+    }
+
+    public int getEtatAvancementObjectif(){
+        return etatAvancementObjectif;
+    }
+
+    public void setEtatAvancementObjectif(int _avancementObjectif){
+        etatAvancementObjectif = _avancementObjectif;
+    }
+
+    private boolean verifObjectifAtteint(){
+        if(objectif == etatAvancementObjectif){
+            return true;
+        }
+        return false;
     }
 }
