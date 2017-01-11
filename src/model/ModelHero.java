@@ -33,16 +33,17 @@ public class ModelHero extends ModelEntite {
 
     private ModelQuete queteCourante;
 
-    public ModelHero(String nom){
-        super(nom);
-        this.classe = baseIntitule;
+    public ModelHero(String nom, int _classe, Genre _genre){
+        super(nom,_genre);
+        classe = null;
+        setClasse(_classe);
         queteEnCours = false;
         queteCourante = null;
     }
 
-    public ModelHero(int vie, int niveau, String nom){
-        super(vie,niveau,nom);
-        this.classe = baseIntitule;
+    public ModelHero(int vie, int niveau, String nom, Genre _genre){
+        super(vie,niveau,nom,_genre);
+        classe = baseIntitule;
         queteEnCours = false;
         queteCourante = null;
     }
@@ -54,44 +55,44 @@ public class ModelHero extends ModelEntite {
                     classe = Classe.ASSASSIN;
                     vieMax = 300;
                     vie = vieMax;
-                    this.setDefenceMag(10);
-                    this.setDefencePhy(6);
-                    this.setForce(20);
-                    this.setMagie(8);
+                    setDefenceMag(10);
+                    setDefencePhy(6);
+                    setForce(20);
+                    setMagie(8);
                     break;
                 case 2 :
                     classe = Classe.GUERRIER;
                     vieMax = 500;
                     vie = vieMax;
-                    this.setDefenceMag(15);
-                    this.setDefencePhy(20);
-                    this.setForce(8);
-                    this.setMagie(4);
+                    setDefenceMag(15);
+                    setDefencePhy(20);
+                    setForce(8);
+                    setMagie(4);
                     break;
                 case 3 :
                     classe = Classe.MAGE;
                     vieMax = 250;
                     vie = vieMax;
-                    this.setDefenceMag(15);
-                    this.setDefencePhy(8);
-                    this.setForce(6);
-                    this.setMagie(25);
+                    setDefenceMag(15);
+                    setDefencePhy(8);
+                    setForce(6);
+                    setMagie(25);
                     break;
                 case 4 :
                     classe = Classe.TRAVELERS;
                     vieMax = 350;
                     vie = vieMax;
-                    this.setDefenceMag(10);
-                    this.setDefencePhy(8);
-                    this.setForce(14);
-                    this.setMagie(10);
+                    setDefenceMag(10);
+                    setDefencePhy(8);
+                    setForce(14);
+                    setMagie(10);
                     break;
                 case 5 :
                     classe = Classe.BASECLASSE;
-                    this.setDefenceMag(10);
-                    this.setDefencePhy(10);
-                    this.setForce(8);
-                    this.setMagie(8);
+                    setDefenceMag(10);
+                    setDefencePhy(10);
+                    setForce(8);
+                    setMagie(8);
                     break;
             }
         }

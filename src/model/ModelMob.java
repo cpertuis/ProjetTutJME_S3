@@ -26,12 +26,12 @@ public class ModelMob extends ModelEntite{
     public Type classe;
 
     ModelMob(String nom){
-        super(nom);
+        super(nom,Genre.NONDEF);
         this.classe = baseIntitule;
     }
 
     ModelMob(int vie, int niveau, String nom){
-        super(vie,niveau,nom);
+        super(vie,niveau,nom,Genre.NONDEF);
         this.classe = baseIntitule;
     }
 

@@ -24,21 +24,25 @@ public class ModelPnj extends ModelEntite{
         }
 
     }
-    Metier baseMetier = Metier.BASEMETIER;
-    Metier metier;
-    ModelQuete quete;
+    private Metier baseMetier = Metier.BASEMETIER;
+    private Metier metier;
+    private ModelQuete quete;
+    private boolean queteDonnee;
 
-    public ModelPnj(String nom){
-        super(nom);
-        this.metier = baseMetier;
-        this.quete = null;
+
+    public ModelPnj(String _nom, ModelQuete _quete, Genre _genre){
+        super(_nom,_genre);
+        metier = baseMetier;
+        quete = _quete;
+        queteDonnee = false;
     }
 
-    public ModelPnj(int vie, int niveau, String nom){
+    /*public ModelPnj(int vie, int niveau, String nom){
         super(vie,niveau,nom);
         this.metier = baseMetier;
         this.quete = null;
-    }
+        queteDonnee = false;
+    }*/
 
     void setMetier(int i){
         if(i <= 6 && i > 0){

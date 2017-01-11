@@ -1,5 +1,6 @@
 package view;
 
+import controller.ControlBoutonCreationPersonnage;
 import model.ModelHero;
 
 import javax.swing.*;
@@ -10,34 +11,35 @@ import java.awt.*;
  */
 public class CreationPersonnage extends JFrame{
 
-    ModelHero modelHero;
+    public JPanel creationPersoGlobal;
+    public JPanel creationPerso;
+    public JPanel creationPersoSexe;
+    public JPanel creationPersoClasse;
+    public JPanel creationPersoNom;
+    public JPanel creationPersoValider;
 
-    JPanel creationPersoGlobal;
-    JPanel creationPerso;
-    JPanel creationPersoSexe;
-    JPanel creationPersoClasse;
-    JPanel creationPersoNom;
-    JPanel creationPersoValider;
+    public JLabel sexe;
+    public JLabel classe;
+    public JLabel nom;
 
-    JLabel sexe;
-    JLabel classe;
-    JLabel nom;
+    public JTextField entrerNom;
 
-    JTextField entrerNom;
+    public JRadioButton buttonSexeH;
+    public JRadioButton buttonSexeF;
 
-    JRadioButton buttonSexeH;
-    JRadioButton buttonSexeF;
+    public ButtonGroup groupSexe;
 
-    ButtonGroup groupSexe;
+    public JButton valider;
 
-    JButton valider;
+    public String[] choixClasse;
 
-    String[] choixClasse;
+    public JComboBox listClasse;
 
-    JComboBox listClasse;
+    public ControlBoutonCreationPersonnage controlBoutonCreationPersonnage;
 
     public CreationPersonnage(){
 
+        controlBoutonCreationPersonnage = new ControlBoutonCreationPersonnage(this);
         setTitle("Création du personnage");
         initCreationPerso();
         setResizable(false);
@@ -86,6 +88,8 @@ public class CreationPersonnage extends JFrame{
         creationPerso.add(creationPersoValider);
 
         creationPersoGlobal.add(creationPerso);
+
+        valider.addActionListener(controlBoutonCreationPersonnage);
 
         setContentPane(creationPersoGlobal);
     }

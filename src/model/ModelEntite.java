@@ -12,7 +12,7 @@ public class ModelEntite {
     protected int magie;
     protected int defencePhy;
     protected int defenceMag;
-    protected enum Genre {
+    public enum Genre {
         HOMME("un homme"),
         FEMMME("une femme"),
         NONDEF("Indefinie");
@@ -31,26 +31,26 @@ public class ModelEntite {
     Genre baseGenre = Genre.NONDEF;
     Genre genre;
 
-    ModelEntite(String nom){
+    ModelEntite(String _nom,Genre _genre){
         vie = 150;
         niveau = 1;
-        this.nom = nom;
-        this.genre = baseGenre;
+        nom = _nom;
+        genre = _genre;
     }
 
-    ModelEntite(int vie, int niveau,String nom){
-        this.vie = vie;
-        this.niveau = niveau;
-        this.nom = nom;
-        this.genre = baseGenre;
+    ModelEntite(int _vie, int _niveau,String _nom, Genre _genre){
+        vie = _vie;
+        niveau = _niveau;
+        nom = _nom;
+        genre = _genre;
 
         if(niveau > 1){
             for(int i = 1; i < niveau; i++){
-                if((this.vie / 2) % 2 != 0){
-                    this.vie = this.vie + this.vie/2 + 1;
+                if((vie / 2) % 2 != 0){
+                    vie = vie + vie/2 + 1;
                 }
                 else{
-                    this.vie = this.vie + this.vie/2;
+                    vie = vie + vie/2;
                 }
             }
         }
