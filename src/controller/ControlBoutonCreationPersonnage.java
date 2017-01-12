@@ -48,7 +48,7 @@ public class ControlBoutonCreationPersonnage implements java.awt.event.ActionLis
     }
 
     public boolean verifChamp(){
-        if(perso.entrerNom.getText() == null){
+        if(perso.entrerNom.getText().equals("")){
             JOptionPane d = new JOptionPane();
             String options[]={ " Ok "};
             String message = "Vous n'avez pas saisi un nom";
