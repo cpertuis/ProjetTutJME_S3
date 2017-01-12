@@ -34,7 +34,7 @@ public class Fenetre extends JFrame {
 		creerWidget(monstre, hero);
 		setSize(900,600);                                // Fixe la taille par défaut
 		setVisible(true);                                // Affiche la fenetre
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);  // Gestion de la fermeture
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);  // Gestion de la fermeture
     }
 
 
