@@ -15,8 +15,8 @@ public class ModelEntite {
     protected int defencePhy;
     protected int defenceMag;
     public enum Genre {
-        HOMME("un homme"),
-        FEMMME("une femme"),
+        HOMME("Homme"),
+        FEMMME("Femme"),
         NONDEF("Indefinie");
 
         private String genre = "";

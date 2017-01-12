@@ -208,9 +208,9 @@ public class FenetreJeu extends JFrame {
         bInteractionChateau.setPreferredSize(new Dimension(150, 50));
         bInteractionForet = new JButton("Combattre");
         bInteractionForet.setPreferredSize(new Dimension(150, 50));
-        bInteractionTaverne1 = new JButton("Parler au tavernier");
+        bInteractionTaverne1 = new JButton("Tavernier");
         bInteractionTaverne1.setPreferredSize(new Dimension(150, 50));
-        bInteractionTaverne2 = new JButton("Parler à l'homme louche");
+        bInteractionTaverne2 = new JButton("Homme louche");
         bInteractionTaverne2.setPreferredSize(new Dimension(150, 50));
         tableauAllCampement = new JTextArea("");
         tableauAllCaverne = new JTextArea("");
