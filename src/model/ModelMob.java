@@ -98,5 +98,4 @@ public class ModelMob extends ModelEntite{
             System.out.println("Ce monstre s'apelle "+nom+", c'est "+genre+" "+classe+" de niveau "+niveau+" et possede "+vie+" points de vie.");
         }
     }
-
 }
