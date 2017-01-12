@@ -186,7 +186,7 @@ public class ModelEntite {
 
     public void sauvegarder(PrintStream ps) {
         String toWrite;
-        toWrite = nom+",";
+        toWrite = vie+","+niveau+","+nom+",";
         if(genre == Genre.FEMMME){
             toWrite += "1";
         } else if(genre == Genre.HOMME){

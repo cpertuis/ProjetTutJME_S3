@@ -28,7 +28,7 @@ public class ControlBoutonCreationPersonnage implements java.awt.event.ActionLis
     public void actionPerformed(ActionEvent event){
         if(event.getSource() == perso.valider){
             perso.dispose();
-            ModelHero hero = new ModelHero(perso.entrerNom.getText(),choixClasse(),choixGenre());
+            ModelHero hero = new ModelHero(perso.entrerNom.getText(),choixGenre(),choixClasse());
             FenetreJeu fenetreJeu = new FenetreJeu(hero);
             List<ModelPnj> pnj = new ArrayList<ModelPnj>();
             //List<ModelMob> mob = new ArrayList<ModelMob>();

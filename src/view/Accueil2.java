@@ -99,14 +99,14 @@ public class Accueil2 extends JFrame{
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         while ((line = br.readLine()) != null) {
             String tabs[] = line.split(",");
-            if(tabs[1].equals("1")) {
+            if(tabs[3].equals("1")) {
                 br.close();
-                return new ModelHero(tabs[0],Integer.parseInt(tabs[2]), ModelEntite.Genre.FEMMME);
-            } else if(tabs[1].equals("2")){
+                return new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.FEMMME,Integer.parseInt(tabs[4]));
+            } else if(tabs[3].equals("2")){
                 br.close();
-                return new ModelHero(tabs[0],Integer.parseInt(tabs[2]), ModelEntite.Genre.HOMME);
+                return new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
             }
         }
-        return new ModelHero("Pas de nom",5,ModelEntite.Genre.NONDEF);
+        return new ModelHero("Pas de nom",ModelEntite.Genre.NONDEF,5);
     }
 }

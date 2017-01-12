@@ -33,22 +33,23 @@ public class ModelHero extends ModelEntite {
 
     private ModelQuete queteCourante;
 
-    public ModelHero(String nom, int _classe, Genre _genre){
+    public ModelHero(String nom, Genre _genre, int _classe){
         super(nom,_genre);
         classe = null;
-        setClasse(_classe);
+        setClasseNouveauPerso(_classe);
         queteEnCours = false;
         queteCourante = null;
     }
 
-    public ModelHero(int vie, int niveau, String nom, Genre _genre){
+    public ModelHero(int vie, int niveau, String nom, Genre _genre, int _classe){
         super(vie,niveau,nom,_genre);
-        classe = baseIntitule;
+        classe = null;
+        setClasseChargementPerso(_classe);
         queteEnCours = false;
         queteCourante = null;
     }
 
-    public void setClasse(int i){
+    public void setClasseNouveauPerso(int i){
         if(i <= 5 && i > 0){
             switch (i){
                 case 1 :
@@ -96,10 +97,52 @@ public class ModelHero extends ModelEntite {
                     break;
             }
         }
-        else{
-            System.out.println("Vous ne pouvez pas mettre un nombre supérieur à 5 ou inferieur à 0");
+    }
+
+    public void setClasseChargementPerso(int i){
+        if(i <= 5 && i > 0){
+            switch (i){
+                case 1 :
+                    classe = Classe.ASSASSIN;
+                    vie = vieMax;
+                    setDefenceMag(10);
+                    setDefencePhy(6);
+                    setForce(20);
+                    setMagie(8);
+                    break;
+                case 2 :
+                    classe = Classe.GUERRIER;
+                    vie = vieMax;
+                    setDefenceMag(15);
+                    setDefencePhy(20);
+                    setForce(8);
+                    setMagie(4);
+                    break;
+                case 3 :
+                    classe = Classe.MAGE;
+                    vie = vieMax;
+                    setDefenceMag(15);
+                    setDefencePhy(8);
+                    setForce(6);
+                    setMagie(25);
+                    break;
+                case 4 :
+                    classe = Classe.TRAVELERS;
+                    vie = vieMax;
+                    setDefenceMag(10);
+                    setDefencePhy(8);
+                    setForce(14);
+                    setMagie(10);
+                    break;
+                case 5 :
+                    classe = Classe.BASECLASSE;
+                    setDefenceMag(10);
+                    setDefencePhy(10);
+                    setForce(8);
+                    setMagie(8);
+                    break;
+            }
         }
-        //faire un switch entre es différente classe
     }
 
     public void print() {
