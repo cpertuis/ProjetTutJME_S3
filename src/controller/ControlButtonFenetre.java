@@ -13,9 +13,10 @@ public class ControlButtonFenetre implements ActionListener {
     public ModelHero mHero;
     public FenetreJeu fenetreJeu;
 
-    public ControlButtonFenetre(ModelHero mHero, FenetreJeu fenetreJeu){
+    public ControlButtonFenetre(ModelHero mHero,FenetreJeu fenetreJeu){
         this.fenetreJeu = fenetreJeu;
         this.mHero=mHero;
+        this.mHero=mMob;
         this.fenetreJeu.setInteraction(this);
     }
     public void actionPerformed(ActionEvent actionEvent) {
@@ -26,7 +27,20 @@ public class ControlButtonFenetre implements ActionListener {
         if (actionEvent.getActionCommand().equals("Quetes")){
             afficherQuetes();
         }
-
+        if (actionEvent.getActionCommand().equals("Combattre")){
+        	if(actionEvent.getSource()==bInteractionCampement){
+        		ModelMob mob = new ModelMob(("Goblin",5, ModelEntite.Genre.HOMME));
+            	new Fenetre(mob,mHero);
+        	}
+        	if(actionEvent.getSource()==bInteractionCaverne){
+        		ModelMob mob = new ModelMob(("Dragon",4, ModelEntite.Genre.HOMME));
+            	new Fenetre(mob,mHero);
+        	}
+        	if(actionEvent.getSource()==bInteractionForet){
+        		ModelMob mob = new ModelMob(("Treant",3, ModelEntite.Genre.NONDEF));
+            	new Fenetre(mob,mHero);
+        	}
+        }
         if(actionEvent.getActionCommand().equals("Sauver")){
             try {
                 sauvgarder();
