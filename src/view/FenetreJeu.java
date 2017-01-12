@@ -373,6 +373,8 @@ public class FenetreJeu extends JFrame {
         bInteractionCaverne.setActionCommand("Combattre");
         bInteractionChateau.setActionCommand("Jarl");
         bInteractionForet.setActionCommand("Combattre");
+        bInteractionTaverne1.setActionCommand("Tavernier");
+        bInteractionTaverne2.setActionCommand("Aventurier");
 
     }
 

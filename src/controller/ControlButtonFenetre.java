@@ -76,10 +76,12 @@ public class ControlButtonFenetre implements ActionListener {
     }
 
     public void afficherQuetes(){
-        new Quetes(this.mHero).display();
+        Quetes quetes = new Quetes(this.mHero);
+        quetes.display();
     }
 
     public void afficherCaracteristique(){
-        new Caracteristique(mHero).display();
+        Caracteristique caracteristique = new Caracteristique(mHero);
+        caracteristique.display();
     }
 }

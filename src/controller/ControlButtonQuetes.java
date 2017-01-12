@@ -17,7 +17,7 @@ public class ControlButtonQuetes implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
 
         if(actionEvent.getSource() ==  quetes.buttonExit){
-            quetes.setVisible(false);
+            quetes.dispose();
         }
     }
 }

@@ -21,7 +21,7 @@ public class ControlButtonCarac implements ActionListener{
     public void actionPerformed(ActionEvent actionEvent) {
 
         if(actionEvent.getSource() ==  caracteristique.buttonExit){
-            caracteristique.setVisible(false);
+            caracteristique.dispose();
         }
     }
 }
