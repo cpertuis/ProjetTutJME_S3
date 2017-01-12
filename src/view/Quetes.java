@@ -16,7 +16,8 @@ public class Quetes extends JFrame {
     public JButton buttonExit;
     ControlButtonQuetes controlButtonQuetes;
 
-    public Quetes(){
+    public Quetes(ModelHero modelHero){
+        this.modelHero=modelHero;
         initAttribut();
         createWidget();
         setResizable(false);
