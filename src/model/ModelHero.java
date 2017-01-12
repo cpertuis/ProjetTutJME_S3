@@ -12,7 +12,7 @@ public class ModelHero extends ModelEntite {
         MAGE("Mage"),
         GUERRIER("Guerrier"),
         ASSASSIN("Assassin"),
-        TRAVELERS("Travelers"),
+        TRAVELERS("Traveler"),
         BASECLASSE("Aventurier");
 
         private String intitule = "";

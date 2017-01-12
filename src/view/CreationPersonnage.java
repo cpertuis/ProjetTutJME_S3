@@ -67,7 +67,7 @@ public class CreationPersonnage extends JFrame{
         groupSexe.add(buttonSexeH);
 
         classe = new JLabel("Classe");
-        choixClasse = new String[]{"Mage", "Guerrier", "Assassin", "Travelers"};
+        choixClasse = new String[]{"Mage", "Guerrier", "Assassin", "Traveler"};
         listClasse = new JComboBox(choixClasse);
 
         nom = new JLabel("Nom");
