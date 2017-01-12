@@ -1,10 +1,14 @@
 package view;
 
-import controller.ControlBouton;
 import controller.ControlBoutonAcceuil;
+import model.ModelEntite;
+import model.ModelHero;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Created by charly on 08/01/17.
@@ -65,6 +69,7 @@ public class Accueil2 extends JFrame{
         loadGame = new JButton("Charger une partie");
         exit = new JButton("Quitter");
 
+        /* ActionListener */
 
         newGame.addActionListener(controlBoutonAcceuil);
         loadGame.addActionListener(controlBoutonAcceuil);
@@ -87,5 +92,21 @@ public class Accueil2 extends JFrame{
         global.add(general);
 
         setContentPane(global);
+    }
+
+    public ModelHero charger(String fileName) throws IOException {
+        String line;
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        while ((line = br.readLine()) != null) {
+            String tabs[] = line.split(",");
+            if(tabs[1].equals("1")) {
+                br.close();
+                return new ModelHero(tabs[0],Integer.parseInt(tabs[2]), ModelEntite.Genre.FEMMME);
+            } else if(tabs[1].equals("2")){
+                br.close();
+                return new ModelHero(tabs[0],Integer.parseInt(tabs[2]), ModelEntite.Genre.HOMME);
+            }
+        }
+        return new ModelHero("Pas de nom",5,ModelEntite.Genre.NONDEF);
     }
 }

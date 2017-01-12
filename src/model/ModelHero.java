@@ -1,7 +1,5 @@
 package model;
 
-import com.jme3.bullet.control.KinematicRagdollControl;
-
 import java.io.PrintStream;
 
 /**
@@ -10,7 +8,7 @@ import java.io.PrintStream;
 
 public class ModelHero extends ModelEntite {
 
-    private enum Classe{
+    public enum Classe{
         MAGE("Mage"),
         GUERRIER("Guerrier"),
         ASSASSIN("Assassin"),
@@ -144,5 +142,6 @@ public class ModelHero extends ModelEntite {
         String toWrite;
         toWrite = getClasseString();
         ps.print(toWrite);
+        ps.println();
     }
 }
