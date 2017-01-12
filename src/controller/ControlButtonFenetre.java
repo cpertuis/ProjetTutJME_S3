@@ -1,7 +1,10 @@
 package controller;
 
+import model.ModelEntite;
 import model.ModelHero;
+import model.ModelMob;
 import view.Caracteristique;
+import view.Fenetre;
 import view.FenetreJeu;
 import view.Quetes;
 
@@ -15,8 +18,7 @@ public class ControlButtonFenetre implements ActionListener {
 
     public ControlButtonFenetre(ModelHero mHero,FenetreJeu fenetreJeu){
         this.fenetreJeu = fenetreJeu;
-        this.mHero=mHero;
-        this.mHero=mMob;
+        this.mHero = mHero;
         this.fenetreJeu.setInteraction(this);
     }
     public void actionPerformed(ActionEvent actionEvent) {
@@ -28,16 +30,16 @@ public class ControlButtonFenetre implements ActionListener {
             afficherQuetes();
         }
         if (actionEvent.getActionCommand().equals("Combattre")){
-        	if(actionEvent.getSource()==bInteractionCampement){
-        		ModelMob mob = new ModelMob(("Goblin",5, ModelEntite.Genre.HOMME));
+        	if(actionEvent.getSource()== fenetreJeu.bInteractionCampement){
+        		ModelMob mob = new ModelMob("Goblin",5, ModelEntite.Genre.HOMME);
             	new Fenetre(mob,mHero);
         	}
-        	if(actionEvent.getSource()==bInteractionCaverne){
-        		ModelMob mob = new ModelMob(("Dragon",4, ModelEntite.Genre.HOMME));
+        	if(actionEvent.getSource()== fenetreJeu.bInteractionCaverne){
+        		ModelMob mob = new ModelMob("Dragon",4, ModelEntite.Genre.HOMME);
             	new Fenetre(mob,mHero);
         	}
-        	if(actionEvent.getSource()==bInteractionForet){
-        		ModelMob mob = new ModelMob(("Treant",3, ModelEntite.Genre.NONDEF));
+        	if(actionEvent.getSource()== fenetreJeu.bInteractionForet){
+        		ModelMob mob = new ModelMob("Treant",3, ModelEntite.Genre.NONDEF);
             	new Fenetre(mob,mHero);
         	}
         }

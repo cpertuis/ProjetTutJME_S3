@@ -5,7 +5,7 @@ package model;
  */
 public class ModelMob extends ModelEntite{
 
-    private enum Type{
+    public enum Type{
         LOUP("Loup"),
         BANDIT("Bandit"),
         TREANT("Tréant"),
@@ -30,12 +30,12 @@ public class ModelMob extends ModelEntite{
         setTypeMob(0);
     }
 
-    ModelMob(int vie, int niveau, String nom){
+    public ModelMob(int vie, int niveau, String nom){
         super(vie,niveau,nom,Genre.NONDEF);
         setTypeMob(0);
     }
     
-    ModelMob(String nom, int typeMob, Genre genre){
+    public ModelMob(String nom, int typeMob, Genre genre){
     	super(nom, genre);
     	setTypeMob(typeMob);
     }
