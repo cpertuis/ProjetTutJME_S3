@@ -1,7 +1,6 @@
 package view;
 
 import controller.ControlBoutonCreationPersonnage;
-import model.ModelHero;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +10,9 @@ import java.awt.*;
  */
 public class CreationPersonnage extends JFrame{
 
-    public JPanel creationPersoGlobal;
+    public Image imageFond;
+
+    public ImagePanel creationPersoGlobal;
     public JPanel creationPerso;
     public JPanel creationPersoSexe;
     public JPanel creationPersoClasse;
@@ -49,13 +50,14 @@ public class CreationPersonnage extends JFrame{
     }
 
     void initCreationPerso(){
+        imageFond = Toolkit.getDefaultToolkit().createImage("img/CreationPerso.jpg");
 
         creationPersoSexe = new JPanel(new GridLayout(1,3));
         creationPersoClasse = new JPanel(new GridLayout(1,2));
         creationPersoNom = new JPanel(new GridLayout(1,2));
         creationPersoValider = new JPanel();
         creationPerso = new JPanel(new GridLayout(4,1));
-        creationPersoGlobal = new JPanel();
+        creationPersoGlobal = new ImagePanel(imageFond);
 
         sexe = new JLabel("Sexe");
         buttonSexeF = new JRadioButton("Femme");
@@ -86,6 +88,7 @@ public class CreationPersonnage extends JFrame{
         creationPerso.add(creationPersoClasse);
         creationPerso.add(creationPersoNom);
         creationPerso.add(creationPersoValider);
+
 
         creationPersoGlobal.add(creationPerso);
 

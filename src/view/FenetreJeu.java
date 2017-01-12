@@ -191,7 +191,7 @@ public class FenetreJeu extends JFrame {
         imgCaverne = new JLabel( new ImageIcon( "img/Caverne.jpg"));
         imgChateau = new JLabel( new ImageIcon( "img/Chateau.jpg"));
         imgForet = new JLabel( new ImageIcon( "img/Foret.jpg"));
-        imgCampement = new JLabel( new ImageIcon( "img/Campement.jpg"));
+        imgCampement = new JLabel( new ImageIcon( "img/CampementBandit.jpg"));
         imgTaverne = new JLabel( new ImageIcon( "img/Taverne.jpg"));
 
         imgCaverne.setPreferredSize(new Dimension(20,20));
