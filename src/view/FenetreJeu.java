@@ -25,7 +25,7 @@ public class FenetreJeu extends JFrame {
     protected ModelQuete quete1;
     protected ModelQuete quete2;
     protected ModelQuete quete3;
-    protected ModelQuete queteCourante;
+    public ModelQuete queteCourante;
 
     protected ModelObjectif objectif1;
     protected ModelObjectif objectif2;
