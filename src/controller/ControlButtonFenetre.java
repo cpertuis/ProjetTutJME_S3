@@ -3,10 +3,7 @@ package controller;
 import model.ModelEntite;
 import model.ModelHero;
 import model.ModelMob;
-import view.Caracteristique;
-import view.Fenetre;
-import view.FenetreJeu;
-import view.Quetes;
+import view.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +29,7 @@ public class ControlButtonFenetre implements ActionListener {
 
         if(actionEvent.getSource() == fenetreJeu.bInteractionTaverne1){
             if(actionEvent.getActionCommand().equals("Tavernier")){
-
+                new FenetrePNJ(mHero,fenetreJeu.pnj1);
             }
         }
 
@@ -43,7 +40,7 @@ public class ControlButtonFenetre implements ActionListener {
         }
 
         if(actionEvent.getSource() == fenetreJeu.bInteractionChateau){
-            if(actionEvent.getActionCommand().equals("Comandante")){
+            if(actionEvent.getActionCommand().equals("Jarl")){
 
             }
         }

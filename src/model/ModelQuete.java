@@ -40,6 +40,13 @@ public class ModelQuete {
                            "\n"+mob.getNom()+" tués : "+objectif.toString());
     }
 
+    public String toString(){
+        return ("La quête que j'ai à vous proposez se nomme : "+intituleQuete+"." +
+                "\n" +
+                "\n"+contenueQuete+
+                "\n"+mob.getNom()+" tués : "+objectif.toString());
+    }
+
     public void verifQuete(){
         if(objectif.getEtatAvancementObjectif() == objectif.getObjectif()){
             setSuccess(true);

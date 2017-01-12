@@ -25,6 +25,7 @@ public class FenetreJeu extends JFrame {
     protected ModelQuete quete1;
     protected ModelQuete quete2;
     protected ModelQuete quete3;
+    public ModelQuete queteCourante;
 
     protected ModelObjectif objectif1;
     protected ModelObjectif objectif2;
@@ -349,6 +350,7 @@ public class FenetreJeu extends JFrame {
         bInteractionCaverne.addActionListener(listener);
         bInteractionChateau.addActionListener(listener);
         bInteractionForet.addActionListener(listener);
+        bInteractionTaverne1.addActionListener(listener);
 
         buttonCaracteristiqueCampement.setActionCommand("Caracteristique");
         buttonCaracteristiqueCaverne.setActionCommand("Caracteristique");
@@ -372,12 +374,13 @@ public class FenetreJeu extends JFrame {
         bInteractionCaverne.setActionCommand("Combattre");
         bInteractionChateau.setActionCommand("Jarl");
         bInteractionForet.setActionCommand("Combattre");
+        bInteractionTaverne1.setActionCommand("Tavernier");
 
     }
 
     public void queteAcceptee(ModelQuete quete){
         if(modelH.getQueteEnCours() == false){
-            modelH.queteCourante = quete;
+            queteCourante = quete;
         }
         else{
             JOptionPane jOptionPane = new JOptionPane();
