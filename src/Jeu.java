@@ -11,7 +11,6 @@ public class Jeu {
         javax.swing.SwingUtilities.invokeLater(
                 new Runnable() {
                     public void run() {
-
                         Accueil2 accueil = new Accueil2();
                     }
                 }

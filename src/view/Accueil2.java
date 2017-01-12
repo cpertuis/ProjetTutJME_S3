@@ -97,6 +97,7 @@ public class Accueil2 extends JFrame{
     public ModelHero charger(String fileName) throws IOException {
         String line;
         BufferedReader br = new BufferedReader(new FileReader(fileName));
+        verifSauvegadeExistante(br);
         while ((line = br.readLine()) != null) {
             String tabs[] = line.split(",");
             if(tabs[3].equals("1")) {
@@ -107,6 +108,15 @@ public class Accueil2 extends JFrame{
                 return new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
             }
         }
-        return new ModelHero("Pas de nom",ModelEntite.Genre.NONDEF,5);
+        return null;
+    }
+
+    public void verifSauvegadeExistante(BufferedReader _br) throws IOException{
+        if(_br.readLine() == null){
+            JOptionPane d = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous n'avez pas de sauvegarde enregistré";
+            d.showOptionDialog(null,message,"Chargement sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
+        }
     }
 }

@@ -29,9 +29,11 @@ public class ControlBoutonAcceuil implements ActionListener{
         }
         if(event.getSource() == accueil.loadGame){
             try {
-                accueil.dispose();
                 ModelHero hero = accueil.charger("src/save.txt");
-                FenetreJeu fenetreJeu = new FenetreJeu(hero);
+                if(hero != null){
+                    accueil.dispose();
+                    FenetreJeu fenetreJeu = new FenetreJeu(hero);
+                }
             } catch (IOException e){
                 e.getMessage();
             }
