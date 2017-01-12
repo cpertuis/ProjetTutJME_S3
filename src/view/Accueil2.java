@@ -96,27 +96,25 @@ public class Accueil2 extends JFrame{
 
     public ModelHero charger(String fileName) throws IOException {
         String line;
+        ModelHero h = null;
         BufferedReader br = new BufferedReader(new FileReader(fileName));
-        verifSauvegadeExistante(br);
         while ((line = br.readLine()) != null) {
             String tabs[] = line.split(",");
             if(tabs[3].equals("1")) {
-                br.close();
-                return new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.FEMMME,Integer.parseInt(tabs[4]));
+                h = new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.FEMMME,Integer.parseInt(tabs[4]));
+                h.print();
             } else if(tabs[3].equals("2")){
-                br.close();
-                return new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
+                h = new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
+                h.print();
             }
+            br.close();
+            return h;
         }
-        return null;
-    }
-
-    public void verifSauvegadeExistante(BufferedReader _br) throws IOException{
-        if(_br.readLine() == null){
-            JOptionPane d = new JOptionPane();
-            String options[]={ " Ok "};
-            String message = "Vous n'avez pas de sauvegarde enregistré";
-            d.showOptionDialog(null,message,"Chargement sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
-        }
+        br.close();
+        JOptionPane d = new JOptionPane();
+        String options[]={ " Ok "};
+        String message = "Vous n'avez pas de sauvegarde";
+        d.showOptionDialog(null,message,"Chargement sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
+        return h;
     }
 }

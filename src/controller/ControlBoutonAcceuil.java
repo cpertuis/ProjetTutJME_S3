@@ -5,8 +5,11 @@ import view.Accueil2;
 import view.CreationPersonnage;
 import view.FenetreJeu;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -29,10 +32,10 @@ public class ControlBoutonAcceuil implements ActionListener{
         }
         if(event.getSource() == accueil.loadGame){
             try {
-                ModelHero hero = accueil.charger("src/save.txt");
-                if(hero != null){
-                    accueil.dispose();
+                if( verifSauvegadeExistante("src/save.txt")){
+                    ModelHero hero = accueil.charger("src/save.txt");
                     FenetreJeu fenetreJeu = new FenetreJeu(hero);
+                    accueil.dispose();
                 }
             } catch (IOException e){
                 e.getMessage();
@@ -41,5 +44,17 @@ public class ControlBoutonAcceuil implements ActionListener{
         if(event.getSource() == accueil.exit){
             System.exit(0);
         }
+    }
+
+    public boolean verifSauvegadeExistante(String fileName) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        if(br.readLine() == null){
+            JOptionPane d = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous n'avez pas de sauvegarde";
+            d.showOptionDialog(null,message,"Chargement sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
+            return false;
+        }
+        return true;
     }
 }

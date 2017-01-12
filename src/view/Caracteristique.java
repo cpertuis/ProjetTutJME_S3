@@ -10,10 +10,10 @@ import java.awt.event.ActionListener;
 
 public class Caracteristique extends JFrame {
     public ControlButtonCarac controlButtonCarac;
-    JLabel nom, genre, classe, niveau, vie, force, magie, defMagie, defPhy;
-    String snom, sgenre, sclasse, sniveau, svie, sforce, smagie, sDefMagie, sDefPhy;
-    JPanel carac;
-    ModelHero mHero;
+    public JLabel nom, genre, classe, niveau, vie, force, magie, defMagie, defPhy;
+    public String snom, sgenre, sclasse, sniveau, svie, sforce, smagie, sDefMagie, sDefPhy;
+    public JPanel carac;
+    public ModelHero mHero;
     public JButton buttonExit;
 
     public Caracteristique(ModelHero mHero){

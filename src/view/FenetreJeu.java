@@ -29,11 +29,11 @@ public class FenetreJeu extends JFrame {
     public JPanel pInteractionForet;
     public JPanel pInteractionTaverne;
 
-    public JButton buttonCaractéristiqueCampement;
-    public JButton buttonCaractéristiqueCaverne;
-    public JButton buttonCaractéristiqueChateau;
-    public JButton buttonCaractéristiqueForet;
-    public JButton buttonCaractéristiqueTaverne;
+    public JButton buttonCaracteristiqueCampement;
+    public JButton buttonCaracteristiqueCaverne;
+    public JButton buttonCaracteristiqueChateau;
+    public JButton buttonCaracteristiqueForet;
+    public JButton buttonCaracteristiqueTaverne;
 
     public JButton buttonQueteCampement;
     public JButton buttonQueteCaverne;
@@ -135,20 +135,20 @@ public class FenetreJeu extends JFrame {
         vide = new JPanel();
         onglets = new JTabbedPane(SwingConstants.TOP);
 
-        buttonCaractéristiqueCampement = new JButton("Caractéristique");
-        buttonCaractéristiqueCampement.setPreferredSize(new Dimension(150, 50));
+        buttonCaracteristiqueCampement = new JButton("Caractéristique");
+        buttonCaracteristiqueCampement.setPreferredSize(new Dimension(150, 50));
 
-        buttonCaractéristiqueCaverne = new JButton("Caractéristique");
-        buttonCaractéristiqueCaverne.setPreferredSize(new Dimension(150, 50));
+        buttonCaracteristiqueCaverne = new JButton("Caractéristique");
+        buttonCaracteristiqueCaverne.setPreferredSize(new Dimension(150, 50));
 
-        buttonCaractéristiqueChateau = new JButton("Caractéristique");
-        buttonCaractéristiqueChateau.setPreferredSize(new Dimension(150, 50));
+        buttonCaracteristiqueChateau = new JButton("Caractéristique");
+        buttonCaracteristiqueChateau.setPreferredSize(new Dimension(150, 50));
 
-        buttonCaractéristiqueForet = new JButton("Caractéristique");
-        buttonCaractéristiqueForet.setPreferredSize(new Dimension(150, 50));
+        buttonCaracteristiqueForet = new JButton("Caractéristique");
+        buttonCaracteristiqueForet.setPreferredSize(new Dimension(150, 50));
 
-        buttonCaractéristiqueTaverne = new JButton("Caractéristique");
-        buttonCaractéristiqueTaverne.setPreferredSize(new Dimension(150, 50));
+        buttonCaracteristiqueTaverne = new JButton("Caractéristique");
+        buttonCaracteristiqueTaverne.setPreferredSize(new Dimension(150, 50));
 
 
         buttonQueteCampement = new JButton("Quête");
@@ -226,7 +226,7 @@ public class FenetreJeu extends JFrame {
         tableauAllForet.setBackground(Color.LIGHT_GRAY);
         tableauAllTaverne.setBackground(Color.LIGHT_GRAY);
 
-        pBoutonsCampement.add(buttonCaractéristiqueCampement);
+        pBoutonsCampement.add(buttonCaracteristiqueCampement);
         pBoutonsCampement.add(buttonQueteCampement);
         pBoutonsCampement.add(buttonSauverCampement);
         pInteractionCampement.add(bInteractionCampement);
@@ -237,7 +237,7 @@ public class FenetreJeu extends JFrame {
         campement.add(imgCampement);
         campement.add(pMilieuCampement);
 
-        pBoutonsTaverne.add(buttonCaractéristiqueTaverne);
+        pBoutonsTaverne.add(buttonCaracteristiqueTaverne);
         pBoutonsTaverne.add(buttonQueteTaverne);
         pBoutonsTaverne.add(buttonSauverTaverne);
         pInteractionTaverne.add(bInteractionTaverne1);
@@ -249,7 +249,7 @@ public class FenetreJeu extends JFrame {
         taverne.add(imgTaverne);
         taverne.add(pMilieuTaverne);
 
-        pBoutonsForet.add(buttonCaractéristiqueForet);
+        pBoutonsForet.add(buttonCaracteristiqueForet);
         pBoutonsForet.add(buttonQueteForet);
         pBoutonsForet.add(buttonSauverForet);
         pInteractionForet.add(bInteractionForet);
@@ -260,7 +260,7 @@ public class FenetreJeu extends JFrame {
         foret.add(imgForet);
         foret.add(pMilieuForet);
 
-        pBoutonsCaverne.add(buttonCaractéristiqueCaverne);
+        pBoutonsCaverne.add(buttonCaracteristiqueCaverne);
         pBoutonsCaverne.add(buttonQueteCaverne);
         pBoutonsCaverne.add(buttonSauverCaverne);
         pInteractionCaverne.add(bInteractionCaverne);
@@ -271,7 +271,7 @@ public class FenetreJeu extends JFrame {
         caverne.add(imgCaverne);
         caverne.add(pMilieuCaverne);
 
-        pBoutonsChateau.add(buttonCaractéristiqueChateau);
+        pBoutonsChateau.add(buttonCaracteristiqueChateau);
         pBoutonsChateau.add(buttonQueteChateau);
         pBoutonsChateau.add(buttonSauverChateau);
         pInteractionChateau.add(bInteractionChateau);
@@ -296,11 +296,11 @@ public class FenetreJeu extends JFrame {
     }
 
     public void setInteraction(ActionListener listener) {
-        buttonCaractéristiqueCampement.addActionListener(listener);
-        buttonCaractéristiqueCaverne.addActionListener(listener);
-        buttonCaractéristiqueChateau.addActionListener(listener);
-        buttonCaractéristiqueForet.addActionListener(listener);
-        buttonCaractéristiqueTaverne.addActionListener(listener);
+        buttonCaracteristiqueCampement.addActionListener(listener);
+        buttonCaracteristiqueCaverne.addActionListener(listener);
+        buttonCaracteristiqueChateau.addActionListener(listener);
+        buttonCaracteristiqueForet.addActionListener(listener);
+        buttonCaracteristiqueTaverne.addActionListener(listener);
 
         buttonQueteCampement.addActionListener(listener);
         buttonQueteCaverne.addActionListener(listener);
@@ -314,11 +314,11 @@ public class FenetreJeu extends JFrame {
         buttonSauverForet.addActionListener(listener);
         buttonSauverTaverne.addActionListener(listener);
 
-        buttonCaractéristiqueCampement.setActionCommand("Caracteristique");
-        buttonCaractéristiqueCaverne.setActionCommand("Caracteristique");
-        buttonCaractéristiqueChateau.setActionCommand("Caracteristique");
-        buttonCaractéristiqueForet.setActionCommand("Caracteristique");
-        buttonCaractéristiqueTaverne.setActionCommand("Caracteristique");
+        buttonCaracteristiqueCampement.setActionCommand("Caracteristique");
+        buttonCaracteristiqueCaverne.setActionCommand("Caracteristique");
+        buttonCaracteristiqueChateau.setActionCommand("Caracteristique");
+        buttonCaracteristiqueForet.setActionCommand("Caracteristique");
+        buttonCaracteristiqueTaverne.setActionCommand("Caracteristique");
 
         buttonQueteCampement.setActionCommand("Quetes");
         buttonQueteCaverne.setActionCommand("Quetes");
