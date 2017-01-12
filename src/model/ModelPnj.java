@@ -77,6 +77,14 @@ public class ModelPnj extends ModelEntite{
         }
     }
 
+    public boolean getQueteDonnee(){
+        return queteDonnee;
+    }
+
+    public void setQueteDonnee(boolean _queteDonnee){
+        queteDonnee = _queteDonnee;
+    }
+
     public void ajoutQuete(ModelQuete quete){
         this.quete = quete;
     }

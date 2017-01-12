@@ -29,6 +29,15 @@ public class ControlButtonFenetre implements ActionListener {
         if (actionEvent.getActionCommand().equals("Quetes")){
             afficherQuetes();
         }
+
+        if(actionEvent.getSource() == fenetreJeu.bInteractionTaverne1){
+            if(actionEvent.getActionCommand().equals("Tavernier")){
+                if(fenetreJeu.pnj1.getQueteDonnee() == false){
+                    fenetreJeu.pnj1.printQuete();
+                }
+            }
+        }
+
         if (actionEvent.getActionCommand().equals("Combattre")){
         	if(actionEvent.getSource()== fenetreJeu.bInteractionCampement){
         		ModelMob mob = new ModelMob("Goblin",5, ModelEntite.Genre.HOMME);

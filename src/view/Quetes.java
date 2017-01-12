@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Quetes extends JFrame {
+    FenetreJeu fenetreJeu;
     JPanel quete;
     JLabel lQuete;
     public JButton buttonExit;
@@ -26,6 +27,7 @@ public class Quetes extends JFrame {
 
     private void initAttribut(){
         lQuete = new JLabel("Quête courante :");
+        fenetreJeu.queteCourante.print();
     }
 
     private void createWidget(){

@@ -2,7 +2,7 @@ package view;
 
 import controller.ControlButtonCarac;
 import controller.ControlButtonFenetre;
-import model.ModelHero;
+import model.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,10 +14,26 @@ import java.io.PrintStream;
 
 public class FenetreJeu extends JFrame {
 
-    /* Hero */
+    /* Hero, Quete, Objectif et mob*/
 
     protected ModelHero modelH;
 
+    public ModelPnj pnj1;
+    public ModelPnj pnj2;
+    public ModelPnj pnj3;
+
+    protected ModelQuete quete1;
+    protected ModelQuete quete2;
+    protected ModelQuete quete3;
+    protected ModelQuete queteCourante;
+
+    protected ModelObjectif objectif1;
+    protected ModelObjectif objectif2;
+    protected ModelObjectif objectif3;
+
+    protected ModelMob mob1;
+    protected ModelMob mob2;
+    protected ModelMob mob3;
     /* Composante fenêtre */
 
     public ControlButtonFenetre controlButtonFenetre;
@@ -108,6 +124,22 @@ public class FenetreJeu extends JFrame {
     }
 
     public void initJeu() {
+        objectif1 = new ModelObjectif(3);
+        objectif2 = new ModelObjectif(2);
+        objectif3 = new ModelObjectif(1);
+
+        mob1 = new ModelMob("Tréant");
+        mob2 = new ModelMob("Bandit");
+        mob3 = new ModelMob("Dragon");
+
+        quete1 = new ModelQuete("Du bois pour les chopines", "Bien le bonjour, \nEst ce que vous pouvez m'aider, j'aurais besoin de bois pour mes chopines. \nMais pas n'importe lequel, du bois de tréants, Y'en a dans la forêt, \nVous pourriez aller m'en chercher ?", mob1, objectif1);
+        quete2 = new ModelQuete("Pas de bandits chez moi", "Vous là, ça vous dirait de casser du bandits ? \nY'en a plein dans le campement pas loin du village, \net ils menacent la paix chez nous. Allez y est revenez quand ce sera fini !", mob2, objectif2);
+        quete3 = new ModelQuete("Du feu dans la caverne", "Aventuriez, je suis content de vous voir, \nUne créature puissante a élu domicile dans la caverne au nord. \n Il faudrait la déloger, je peux compter sur vous ?", mob3, objectif3);
+
+        pnj1 = new ModelPnj("Tavernier", quete1, ModelEntite.Genre.HOMME);
+        pnj2 = new ModelPnj("Skovald", quete2, ModelEntite.Genre.HOMME);
+        pnj3 = new ModelPnj("Arcania", quete3, ModelEntite.Genre.FEMMME);
+
         panoGlobalJeu = new JPanel();
         taverne = new JPanel(new GridLayout(2,1));
         chateau= new JPanel(new GridLayout(2,1));
@@ -342,6 +374,18 @@ public class FenetreJeu extends JFrame {
         bInteractionChateau.setActionCommand("Jarl");
         bInteractionForet.setActionCommand("Combattre");
 
+    }
+
+    public void queteAcceptee(ModelQuete quete){
+        if(modelH.getQueteEnCours() == false){
+            queteCourante = quete;
+        }
+        else{
+            JOptionPane jOptionPane = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous avez déja une quête en cours";
+            jOptionPane.showOptionDialog(null,message,"Attention",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
+        }
     }
 
     public void display() {
