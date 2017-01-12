@@ -1,4 +1,4 @@
-package controller;
+/*package controller;
 import model.ModelHero;
 import view.Caracteristique;
 import view.FenetreJeu;
@@ -69,4 +69,4 @@ public class ControlBoutonCombat implements ActionListener{
 		}
 	  }  
     }
-}
+}*/
