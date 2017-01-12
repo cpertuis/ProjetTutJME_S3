@@ -314,6 +314,11 @@ public class FenetreJeu extends JFrame {
         buttonSauverForet.addActionListener(listener);
         buttonSauverTaverne.addActionListener(listener);
 
+        bInteractionCampement.addActionListener(listener);
+        bInteractionCaverne.addActionListener(listener);
+        bInteractionChateau.addActionListener(listener);
+        bInteractionForet.addActionListener(listener);
+
         buttonCaracteristiqueCampement.setActionCommand("Caracteristique");
         buttonCaracteristiqueCaverne.setActionCommand("Caracteristique");
         buttonCaracteristiqueChateau.setActionCommand("Caracteristique");
@@ -331,6 +336,12 @@ public class FenetreJeu extends JFrame {
         buttonSauverChateau.setActionCommand("Sauver");
         buttonSauverForet.setActionCommand("Sauver");
         buttonSauverTaverne.setActionCommand("Sauver");
+
+        bInteractionCampement.setActionCommand("Combattre");
+        bInteractionCaverne.setActionCommand("Combattre");
+        bInteractionChateau.setActionCommand("Jarl");
+        bInteractionForet.setActionCommand("Combattre");
+
     }
 
     public void display() {
