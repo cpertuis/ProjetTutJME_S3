@@ -24,7 +24,7 @@ public class Caracteristique extends JFrame {
         createWidget();
         setResizable(true);
         setVisible(true);
-        pack();
+        setSize(300, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }

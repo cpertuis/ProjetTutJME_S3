@@ -18,14 +18,14 @@ public class Quetes extends JFrame {
         createWidget();
         setResizable(false);
         setVisible(false);
-        pack();
+        setSize(300, 500);
         setLocationRelativeTo(null);
         controlButtonQuetes = new ControlButtonQuetes(this);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     private void initAttribut(){
-        lQuete = new JLabel("Liste Quêtes : ");
+        lQuete = new JLabel("Quête courante :");
     }
 
     private void createWidget(){
