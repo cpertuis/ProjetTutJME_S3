@@ -341,5 +341,9 @@ public class FenetreJeu extends JFrame {
         String file = "src/save.txt";
         PrintStream ps = new PrintStream(new File(file));
         modelH.sauvegarder(ps);
+        JOptionPane d = new JOptionPane();
+        String options[]={ " Ok "};
+        String message = "Sauvegarde effectué";
+        d.showOptionDialog(null,message,"Sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
     }
 }
