@@ -19,15 +19,15 @@ public class ControlButtonFenetre implements ActionListener {
         this.fenetreJeu.setInteraction(this);
     }
     public void actionPerformed(ActionEvent actionEvent) {
-        if(actionEvent.getSource() ==  fenetreJeu.buttonCaractéristique){
+        if(actionEvent.getActionCommand().equals("Caracteristique")){
             afficherCaracteristique();
         }
 
-        if (actionEvent.getSource()== fenetreJeu.buttonQuete){
+        if (actionEvent.getActionCommand().equals("Quetes")){
             afficherQuetes();
         }
 
-        if(actionEvent.getSource() == fenetreJeu.buttonSauver){
+        if(actionEvent.getActionCommand().equals("Sauver")){
             try {
                 sauvgarder();
             } catch (IOException e){
