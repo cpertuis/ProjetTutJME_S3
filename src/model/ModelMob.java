@@ -64,7 +64,7 @@ public class ModelMob extends ModelEntite{
                 setMagie(15);
     		case 3:
     			this.classe = Type.TREANT;
-    			vieMax = 150;
+    			vieMax = 1500;
                 vie = vieMax;
                 setDefenceMag(2);
                 setDefencePhy(5);
