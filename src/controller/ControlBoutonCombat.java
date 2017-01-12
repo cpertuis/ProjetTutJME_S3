@@ -16,7 +16,7 @@ public class ControlBoutonCombat implements ActionListener{
     this.fenetreJeu = fenetreJeu;
     this.mHero=mHero;
     this.mMob=mMob;
-    this.fenetre.setInteraction(this);        
+    this.fenetre.setInteraction(this);
   }
     public void actionPerformed(ActionEvent actionEvent) {
       if (actionEvent.getActionCommand().equals("Attaque Physique")){

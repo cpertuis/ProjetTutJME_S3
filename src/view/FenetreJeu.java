@@ -25,7 +25,6 @@ public class FenetreJeu extends JFrame {
     protected ModelQuete quete1;
     protected ModelQuete quete2;
     protected ModelQuete quete3;
-    public ModelQuete queteCourante;
 
     protected ModelObjectif objectif1;
     protected ModelObjectif objectif2;
@@ -378,7 +377,7 @@ public class FenetreJeu extends JFrame {
 
     public void queteAcceptee(ModelQuete quete){
         if(modelH.getQueteEnCours() == false){
-            queteCourante = quete;
+            modelH.queteCourante = quete;
         }
         else{
             JOptionPane jOptionPane = new JOptionPane();

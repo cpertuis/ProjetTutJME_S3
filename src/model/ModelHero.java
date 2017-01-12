@@ -31,7 +31,7 @@ public class ModelHero extends ModelEntite {
 
     private boolean queteEnCours;
 
-    private ModelQuete queteCourante;
+    public ModelQuete queteCourante;
 
     public ModelHero(String nom, Genre _genre, int _classe){
         super(nom,_genre);

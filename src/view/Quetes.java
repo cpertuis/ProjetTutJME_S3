@@ -30,7 +30,7 @@ public class Quetes extends JFrame {
 
     private void initAttribut(){
         if(modelHero.getQueteEnCours() == true){
-            fenetreJeu.queteCourante.print();
+            modelHero.queteCourante.print();
         }
         else{
             lQuete = new JLabel("Vous n'avez pas de quêtes.");
