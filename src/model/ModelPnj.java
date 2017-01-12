@@ -93,6 +93,10 @@ public class ModelPnj extends ModelEntite{
         quete.print();
     }
 
+    public ModelQuete getQuete() {
+        return quete;
+    }
+
     public void print() {
         if(vie <= 0){
             System.out.println("Le personnage "+nom+" est actuellement mort.");
