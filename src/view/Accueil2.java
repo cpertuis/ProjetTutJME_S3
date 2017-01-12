@@ -39,11 +39,13 @@ public class Accueil2 extends JFrame{
     public JButton loadGame;
     public JButton exit;
 
+
     public Accueil2(){
         controlBoutonAcceuil = new ControlBoutonAcceuil(this);
         initAttribut();
         creerWidget();
-        pack();
+        setSize(new Dimension(465,365));
+        setLocationRelativeTo(null);
         setVisible(true);	                             // Affiche la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Ferme avec la croix
         setLocationRelativeTo(null);                     // Affiche au milieu de l'écran
@@ -53,7 +55,7 @@ public class Accueil2 extends JFrame{
 
         /* JPanel */
 
-        global =  new JPanel();
+        global =  new JPanel(new BorderLayout());
         general = new JPanel();
         haut = new JPanel();
         millieu =  new JPanel();
@@ -66,8 +68,11 @@ public class Accueil2 extends JFrame{
         /* JButton */
 
         newGame = new JButton("Nouvelle partie");
+        newGame.setPreferredSize(new Dimension(150, 30));
         loadGame = new JButton("Charger une partie");
+        loadGame.setPreferredSize(new Dimension(150, 30));
         exit = new JButton("Quitter");
+        exit.setPreferredSize(new Dimension(150, 30));
 
         /* ActionListener */
 
@@ -89,7 +94,8 @@ public class Accueil2 extends JFrame{
         general.add(grille);
         general.setLayout(new BoxLayout(general, BoxLayout.Y_AXIS));
 
-        global.add(general);
+        global.add(general,BorderLayout.CENTER);
+
 
         setContentPane(global);
     }

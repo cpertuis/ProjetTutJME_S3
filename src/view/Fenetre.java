@@ -3,6 +3,7 @@ package view;
 import javax.swing.*;
 
 import controller.ControlBouton;
+import model.ModelEntite;
 import model.ModelHero;
 import model.ModelMob;
 
@@ -118,14 +119,14 @@ public class Fenetre extends JFrame {
     }
     public static void main(String[] args) {
     	 
-        /*javax.swing.SwingUtilities.invokeLater( new Runnable() {
+        javax.swing.SwingUtilities.invokeLater( new Runnable() {
      
           public void run() {
-        	  //ModelMob monstre = new ModelMob("paul",);
-        	  //ModelHero hero = new ModelHero("raph",);
-              //Fenetre fen = new Fenetre(monstre,hero);
+        	  ModelMob monstre = new ModelMob("paul");
+        	  ModelHero hero = new ModelHero("raph", ModelEntite.Genre.HOMME,4);
+              Fenetre fen = new Fenetre(monstre,hero);
           }
-        });*/
+        });
       }
 
 }

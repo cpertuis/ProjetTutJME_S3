@@ -100,8 +100,8 @@ public class FenetreJeu extends JFrame {
         setTitle("RPG");
         initJeu();
         plateauDeJeu();
-        setResizable(true);
-        setSize(new Dimension(1200,900));
+        setResizable(false);
+        setSize(new Dimension(465,365));
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

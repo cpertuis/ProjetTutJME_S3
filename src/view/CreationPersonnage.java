@@ -1,4 +1,4 @@
-package view;
+﻿package view;
 
 import controller.ControlBoutonCreationPersonnage;
 
@@ -44,7 +44,8 @@ public class CreationPersonnage extends JFrame{
         setTitle("Création du personnage");
         initCreationPerso();
         setResizable(false);
-        setSize(900,600);
+        setSize(new Dimension(465,365));
+        setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
