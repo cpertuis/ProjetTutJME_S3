@@ -32,7 +32,7 @@ public class ControlBoutonAcceuil implements ActionListener{
         }
         if(event.getSource() == accueil.loadGame){
             try {
-                if( verifSauvegadeExistante("src/save.txt")){
+                if(verifSauvegadeExistante("src/save.txt")){
                     ModelHero hero = accueil.charger("src/save.txt");
                     FenetreJeu fenetreJeu = new FenetreJeu(hero);
                     accueil.dispose();
