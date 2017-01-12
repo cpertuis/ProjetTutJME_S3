@@ -8,7 +8,7 @@ public class ModelMob extends ModelEntite{
     private enum Type{
         LOUP("Loup"),
         BANDIT("Bandit"),
-        SLIM("Slim"),
+        TREANT("Tréant"),
         BOSS("Dragon"),
         BASEMOB("Goblin");
 
@@ -63,7 +63,7 @@ public class ModelMob extends ModelEntite{
                 setForce(15);
                 setMagie(15);
     		case 3:
-    			this.classe = Type.SLIM;
+    			this.classe = Type.TREANT;
     			vieMax = 150;
                 vie = vieMax;
                 setDefenceMag(2);
