@@ -33,7 +33,7 @@ public class ModelQuete {
         this.objectif = objectif;
     }
 
-    void print(){
+    public void print(){
         System.out.println("La quête que j'ai à vous proposez se nomme : "+intituleQuete+"." +
                            "\n" +
                            "\n"+contenueQuete+
