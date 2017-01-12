@@ -34,7 +34,7 @@ public class Fenetre extends JFrame {
 		creerWidget(monstre, hero);
 		setSize(900,600);                                // Fixe la taille par défaut
 		setVisible(true);                                // Affiche la fenetre
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);  // Gestion de la fermeture
     }
 
 
@@ -65,7 +65,7 @@ public class Fenetre extends JFrame {
         panNom.setBackground(Color.white);
         panNom.setPreferredSize(new Dimension(300, 100));
         panNom.setBorder(BorderFactory.createTitledBorder("Combat"));
-        JLabel nomLabel = new JLabel(monstre.intitule.toString());
+        JLabel nomLabel = new JLabel(monstre.getNom());
         panNom.add(nomLabel);
             
         JPanel global = new JPanel();
