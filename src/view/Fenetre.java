@@ -65,7 +65,7 @@ public class Fenetre extends JFrame {
         panNom.setBackground(Color.white);
         panNom.setPreferredSize(new Dimension(300, 100));
         panNom.setBorder(BorderFactory.createTitledBorder("Combat"));
-        JLabel nomLabel = new JLabel(monstre.toString());
+        JLabel nomLabel = new JLabel(monstre.intitule.toString());
         panNom.add(nomLabel);
             
         JPanel global = new JPanel();
