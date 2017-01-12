@@ -47,8 +47,8 @@ public class Fenetre extends JFrame {
     	JLabel vieMob = new JLabel(monstre.getVie()+"/"+monstre.getVieMax());
         attaquePhy = new JButton("Attaque Physique"); // Creation des objets à ajouter
         attaqueMag = new JButton("Attaque Magique");
-        defPhy = new JButton("Defence Physique");
-        defMag = new JButton("Defence Magique");
+        defPhy = new JButton("Defense Physique");
+        defMag = new JButton("Defense Magique");
 
         JPanel ligne2 = new JPanel();
         ligne2.setLayout(new BoxLayout(ligne2, BoxLayout.LINE_AXIS));
@@ -65,7 +65,7 @@ public class Fenetre extends JFrame {
         panNom.setBackground(Color.white);
         panNom.setPreferredSize(new Dimension(300, 100));
         panNom.setBorder(BorderFactory.createTitledBorder("Combat"));
-        JLabel nomLabel = new JLabel("Pomme");
+        JLabel nomLabel = new JLabel(monstre.toString());
         panNom.add(nomLabel);
             
         JPanel global = new JPanel();
