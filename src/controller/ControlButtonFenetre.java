@@ -43,7 +43,7 @@ public class ControlButtonFenetre implements ActionListener {
         }
 
         if(actionEvent.getSource() == fenetreJeu.bInteractionChateau){
-            if(actionEvent.getActionCommand().equals("Jarl")){
+            if(actionEvent.getActionCommand().equals("Comandante")){
 
             }
         }
