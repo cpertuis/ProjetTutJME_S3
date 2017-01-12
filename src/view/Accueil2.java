@@ -69,7 +69,7 @@ public class Accueil2 extends JFrame{
 
         newGame = new JButton("Nouvelle partie");
         newGame.setPreferredSize(new Dimension(150, 30));
-        loadGame = new JButton("Charger une partie");
+        loadGame = new JButton("Charger");
         loadGame.setPreferredSize(new Dimension(150, 30));
         exit = new JButton("Quitter");
         exit.setPreferredSize(new Dimension(150, 30));
