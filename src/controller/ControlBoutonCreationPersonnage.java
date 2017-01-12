@@ -7,6 +7,7 @@ import model.ModelPnj;
 import view.CreationPersonnage;
 import view.FenetreJeu;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.rmi.MarshalledObject;
 import java.util.ArrayList;
@@ -27,12 +28,41 @@ public class ControlBoutonCreationPersonnage implements java.awt.event.ActionLis
 
     public void actionPerformed(ActionEvent event){
         if(event.getSource() == perso.valider){
-            perso.dispose();
-            ModelHero hero = new ModelHero(perso.entrerNom.getText(),choixGenre(),choixClasse());
-            FenetreJeu fenetreJeu = new FenetreJeu(hero);
-            List<ModelPnj> pnj = new ArrayList<ModelPnj>();
-            //List<ModelMob> mob = new ArrayList<ModelMob>();
+            ModelHero hero = creerHero();
+            if(hero != null) {
+                List<ModelPnj> pnj = new ArrayList<ModelPnj>();
+                //List<ModelMob> mob = new ArrayList<ModelMob>();
+                FenetreJeu fenetreJeu = new FenetreJeu(hero);
+                perso.dispose();
+            }
         }
+    }
+
+    public ModelHero creerHero(){
+        boolean verif;
+        verif = verifChamp();
+        if(verif) {
+            return new ModelHero(perso.entrerNom.getText(), choixGenre(), choixClasse());
+        }
+        return null;
+    }
+
+    public boolean verifChamp(){
+        if(perso.entrerNom.getText() == null){
+            JOptionPane d = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous n'avez pas saisi un nom";
+            d.showOptionDialog(null,message,"Création personnage",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
+            return false;
+        } else if (choixGenre().equals(ModelEntite.Genre.NONDEF)){
+            JOptionPane d = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous n'avez pas choisi un genre";
+            d.showOptionDialog(null,message,"Création personnage",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
+
+            return false;
+        }
+        return true;
     }
 
     public ModelEntite.Genre choixGenre(){

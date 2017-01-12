@@ -116,7 +116,7 @@ public class Accueil2 extends JFrame{
             JOptionPane d = new JOptionPane();
             String options[]={ " Ok "};
             String message = "Vous n'avez pas de sauvegarde enregistré";
-            d.showOptionDialog(null,message,"Chargement sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
+            d.showOptionDialog(null,message,"Chargement sauvegarde",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
         }
     }
 }

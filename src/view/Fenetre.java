@@ -121,9 +121,9 @@ public class Fenetre extends JFrame {
         javax.swing.SwingUtilities.invokeLater( new Runnable() {
      
           public void run() {
-        	  ModelMob monstre = new ModelMob("paul");
-        	  ModelHero hero = new ModelHero("raph");
-              Fenetre fen = new Fenetre(monstre,hero);
+        	  //ModelMob monstre = new ModelMob("paul",);
+        	  //ModelHero hero = new ModelHero("raph",);
+              //Fenetre fen = new Fenetre(monstre,hero);
           }
         });
       }
