@@ -9,6 +9,7 @@ public class ModelMob extends ModelEntite{
         LOUP("Loup"),
         BANDIT("Bandit"),
         SLIM("Slim"),
+        BOSS("Dragon"),
         BASEMOB("Goblin");
 
         private String intitule = "";
@@ -22,21 +23,71 @@ public class ModelMob extends ModelEntite{
         }
 
     }
-    Type baseIntitule = Type.BASEMOB;
     public Type classe;
 
-    ModelMob(String nom){
+    public ModelMob(String nom){
         super(nom,Genre.NONDEF);
-        this.classe = baseIntitule;
+        setTypeMob(0);
     }
 
     ModelMob(int vie, int niveau, String nom){
         super(vie,niveau,nom,Genre.NONDEF);
-        this.classe = baseIntitule;
+        setTypeMob(0);
+    }
+    
+    ModelMob(String nom, int typeMob, Genre genre){
+    	super(nom, genre);
+    	setTypeMob(typeMob);
     }
 
     public Type getClasse(){
         return classe;
+    }
+    
+    public void setTypeMob(int numMob){
+    	switch (numMob){
+    		case 1:
+    			this.classe = Type.LOUP;
+    			vieMax = 300;
+                vie = vieMax;
+                setDefenceMag(10);
+                setDefencePhy(10);
+                setForce(15);
+                setMagie(10);
+    		case 2:
+    			this.classe = Type.BANDIT;
+    			vieMax = 500;
+                vie = vieMax;
+                setDefenceMag(20);
+                setDefencePhy(20);
+                setForce(15);
+                setMagie(15);
+    		case 3:
+    			this.classe = Type.SLIM;
+    			vieMax = 150;
+                vie = vieMax;
+                setDefenceMag(2);
+                setDefencePhy(5);
+                setForce(10);
+                setMagie(10);
+    		case 4:
+    			this.classe = Type.BOSS;	
+    			vieMax = 2000;
+                vie = vieMax;
+                setDefenceMag(20);
+                setDefencePhy(20);
+                setForce(30);
+                setMagie(20);
+    		default:
+    			this.classe = Type.BASEMOB;
+    			vieMax = 100;
+                vie = vieMax;
+                setDefenceMag(2);
+                setDefencePhy(2);
+                setForce(5);
+                setMagie(5);
+    	}
+    		
     }
 
     public void print() {
