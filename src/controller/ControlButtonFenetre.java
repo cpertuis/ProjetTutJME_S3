@@ -32,9 +32,19 @@ public class ControlButtonFenetre implements ActionListener {
 
         if(actionEvent.getSource() == fenetreJeu.bInteractionTaverne1){
             if(actionEvent.getActionCommand().equals("Tavernier")){
-                if(fenetreJeu.pnj1.getQueteDonnee() == false){
-                    fenetreJeu.pnj1.printQuete();
-                }
+
+            }
+        }
+
+        if(actionEvent.getSource() == fenetreJeu.bInteractionTaverne2){
+            if(actionEvent.getActionCommand().equals("Aventurier")){
+
+            }
+        }
+
+        if(actionEvent.getSource() == fenetreJeu.bInteractionChateau){
+            if(actionEvent.getActionCommand().equals("Jarl")){
+
             }
         }
 

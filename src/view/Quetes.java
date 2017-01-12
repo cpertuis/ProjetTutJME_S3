@@ -30,7 +30,6 @@ public class Quetes extends JFrame {
 
     private void initAttribut(){
         if(modelHero.getQueteEnCours() == true){
-            lQuete = new JLabel("Quête courante :");
             fenetreJeu.queteCourante.print();
         }
         else{
