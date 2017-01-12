@@ -136,6 +136,7 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 5 :
                     classe = Classe.BASECLASSE;
+					vieMax = vie;
                     setDefenceMag(10);
                     setDefencePhy(10);
                     setForce(8);
