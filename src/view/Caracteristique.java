@@ -22,7 +22,7 @@ public class Caracteristique extends JFrame {
         this.mHero=mHero;
         initAttribut();
         createWidget();
-        setResizable(false);
+        setResizable(true);
         setVisible(true);
         pack();
         setLocationRelativeTo(null);

@@ -102,10 +102,8 @@ public class Accueil2 extends JFrame{
             String tabs[] = line.split(",");
             if(tabs[3].equals("1")) {
                 h = new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.FEMMME,Integer.parseInt(tabs[4]));
-                h.print();
             } else if(tabs[3].equals("2")){
                 h = new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
-                h.print();
             }
             br.close();
             return h;

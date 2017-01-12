@@ -48,18 +48,17 @@ public class ControlBoutonCreationPersonnage implements java.awt.event.ActionLis
     }
 
     public boolean verifChamp(){
-        if(perso.entrerNom.getText().equals("")){
-            JOptionPane d = new JOptionPane();
-            String options[]={ " Ok "};
-            String message = "Vous n'avez pas saisi un nom";
-            d.showOptionDialog(null,message,"Création personnage",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
-            return false;
-        } else if (choixGenre().equals(ModelEntite.Genre.NONDEF)){
+        if (choixGenre().equals(ModelEntite.Genre.NONDEF)){
             JOptionPane d = new JOptionPane();
             String options[]={ " Ok "};
             String message = "Vous n'avez pas choisi un genre";
             d.showOptionDialog(null,message,"Création personnage",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
-
+            return false;
+        } else if(perso.entrerNom.getText().equals("")){
+            JOptionPane d = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous n'avez pas saisi un nom";
+            d.showOptionDialog(null,message,"Création personnage",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
             return false;
         }
         return true;
