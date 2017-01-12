@@ -12,6 +12,8 @@ public class ModelEntite {
     protected int niveau;
     protected int force;
     protected int magie;
+    protected int attaquePhy;
+    protected int attaqueMag;
     protected int defencePhy;
     protected int defenceMag;
     public enum Genre {
@@ -73,7 +75,13 @@ public class ModelEntite {
     public void setForce(int force){
         this.force = force;
     }
+    public void setAttaquePhy(int attaquePhy){
+        this.attaquePhy = attaquePhy;
+    }
 
+    public void setAttaqueMag(int attaqueMag){
+        this.attaqueMag = attaqueMag;
+    }
     public void setDefencePhy(int defencePhy){
         this.defencePhy = defencePhy;
     }
@@ -140,7 +148,15 @@ public class ModelEntite {
     public int getDefMag(){
         return defenceMag;
     }
+    
+    public  int getAttPhy(){
+        return attaquePhy;
+    }
 
+    public int getAttMag(){
+        return attaqueMag;
+    }
+    
     public int getForce(){
         return force;
     }
