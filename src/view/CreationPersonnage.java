@@ -1,4 +1,4 @@
-﻿package view;
+package view;
 
 import controller.ControlBoutonCreationPersonnage;
 
@@ -44,7 +44,7 @@ public class CreationPersonnage extends JFrame{
         setTitle("Création du personnage");
         initCreationPerso();
         setResizable(false);
-        setSize(new Dimension(465,365));
+        setSize(465,365);
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,7 +68,7 @@ public class CreationPersonnage extends JFrame{
         groupSexe.add(buttonSexeH);
 
         classe = new JLabel("Classe");
-        choixClasse = new String[]{"Mage", "Guerrier", "Assassin", "Traveler"};
+        choixClasse = new String[]{"Mage", "Guerrier", "Assassin", "Travelers"};
         listClasse = new JComboBox(choixClasse);
 
         nom = new JLabel("Nom");
