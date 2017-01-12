@@ -32,7 +32,6 @@ public class ControlBoutonCreationPersonnage implements java.awt.event.ActionLis
             FenetreJeu fenetreJeu = new FenetreJeu(hero);
             List<ModelPnj> pnj = new ArrayList<ModelPnj>();
             //List<ModelMob> mob = new ArrayList<ModelMob>();
-            hero.print();
         }
     }
 

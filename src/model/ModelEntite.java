@@ -1,5 +1,7 @@
 package model;
 
+import java.io.PrintStream;
+
 /**
  * Created by raphael on 11/11/16.
  */
@@ -180,5 +182,18 @@ public class ModelEntite {
         else{
             System.out.println("Ce personnage s'apelle "+nom+",c'est "+genre+" de niveau "+niveau+" et possede "+vie+" points de vie.");
         }
+    }
+
+    public void sauvegarder(PrintStream ps) {
+        String toWrite;
+        toWrite = nom+",";
+        if(genre == Genre.FEMMME){
+            toWrite += "1";
+        } else if(genre == Genre.HOMME){
+            toWrite += "2";
+        } else {
+            toWrite +="0";
+        }
+        ps.print(toWrite);
     }
 }

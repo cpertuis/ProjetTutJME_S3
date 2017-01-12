@@ -8,10 +8,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
 
 public class FenetreJeu extends JFrame {
 
+    /* Hero */
+
     protected ModelHero modelH;
+
+    /* Composante fenêtre */
 
     public ControlButtonFenetre controlButtonFenetre;
     public JPanel panoGlobalJeu;
@@ -32,7 +39,6 @@ public class FenetreJeu extends JFrame {
     public JButton bInteractionTaverne2;
     public JButton bInteractionVillage1;
     public JButton bInteractionVillage2;
-
 
     public JTabbedPane onglets;
     public JPanel vide;
@@ -62,10 +68,9 @@ public class FenetreJeu extends JFrame {
     public JPanel pReponse;
     public JPanel jeu;
 
-
-
     public JTextField textReponse;
     public JButton buttonReponse;
+
     public JButton buttonSauver;
 
     public JTextArea tableauAll;
@@ -247,9 +252,16 @@ public class FenetreJeu extends JFrame {
         buttonCaractéristique.addActionListener(listener);
         buttonQuete.addActionListener(listener);
         buttonReponse.addActionListener(listener);
+        buttonSauver.addActionListener(listener);
     }
 
     public void display() {
         setVisible(true);
+    }
+
+    public void sauvegarder() throws IOException{
+        String file = "src/save.txt";
+        PrintStream ps = new PrintStream(new File(file));
+        modelH.sauvegarder(ps);
     }
 }

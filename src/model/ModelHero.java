@@ -2,6 +2,8 @@ package model;
 
 import com.jme3.bullet.control.KinematicRagdollControl;
 
+import java.io.PrintStream;
+
 /**
  * Created by raphael on 11/11/16.
  */
@@ -26,8 +28,8 @@ public class ModelHero extends ModelEntite {
         }
 
     }
-    Classe baseIntitule = Classe.BASECLASSE;
-    Classe classe;
+    private Classe baseIntitule = Classe.BASECLASSE;
+    private Classe classe;
 
     private boolean queteEnCours;
 
@@ -115,11 +117,32 @@ public class ModelHero extends ModelEntite {
         return classe;
     }
 
+    public String getClasseString(){
+        if(getClasse().equals(Classe.ASSASSIN)){
+            return ",1";
+        } else if(getClasse().equals(Classe.GUERRIER)){
+            return ",2";
+        } else if(getClasse().equals(Classe.MAGE)){
+            return ",3";
+        } else if(getClasse().equals(Classe.TRAVELERS)){
+            return ",4";
+        } else {
+            return ",5";
+        }
+    }
+
     public boolean getQueteEnCours(){
         return queteEnCours;
     }
 
     public void setQueteEnCours(boolean b){
         queteEnCours = b;
+    }
+
+    public void sauvegarder(PrintStream ps){
+        super.sauvegarder(ps);
+        String toWrite;
+        toWrite = getClasseString();
+        ps.print(toWrite);
     }
 }
