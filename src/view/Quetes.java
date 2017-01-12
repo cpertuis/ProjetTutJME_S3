@@ -2,6 +2,7 @@ package view;
 
 
 import controller.ControlButtonQuetes;
+import model.ModelHero;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +10,7 @@ import java.awt.event.ActionListener;
 
 public class Quetes extends JFrame {
     FenetreJeu fenetreJeu;
+    ModelHero modelHero;
     JPanel quete;
     JLabel lQuete;
     public JButton buttonExit;
@@ -26,8 +28,13 @@ public class Quetes extends JFrame {
     }
 
     private void initAttribut(){
-        lQuete = new JLabel("Quête courante :");
-        fenetreJeu.queteCourante.print();
+        if(modelHero.getQueteEnCours() == true){
+            lQuete = new JLabel("Quête courante :");
+            fenetreJeu.queteCourante.print();
+        }
+        else{
+            lQuete = new JLabel("Vous n'avez pas de quêtes.");
+        }
     }
 
     private void createWidget(){
