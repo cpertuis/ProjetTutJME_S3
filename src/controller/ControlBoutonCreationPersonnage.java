@@ -5,6 +5,7 @@ import model.ModelHero;
 import model.ModelMob;
 import model.ModelPnj;
 import view.CreationPersonnage;
+import view.FenetreJeu;
 
 import java.awt.event.ActionEvent;
 import java.rmi.MarshalledObject;
@@ -26,8 +27,9 @@ public class ControlBoutonCreationPersonnage implements java.awt.event.ActionLis
 
     public void actionPerformed(ActionEvent event){
         if(event.getSource() == perso.valider){
-
+            perso.dispose();
             ModelHero hero = new ModelHero(perso.entrerNom.getText(),choixClasse(),choixGenre());
+            FenetreJeu fenetreJeu = new FenetreJeu(hero);
             List<ModelPnj> pnj = new ArrayList<ModelPnj>();
             //List<ModelMob> mob = new ArrayList<ModelMob>();
             hero.print();
