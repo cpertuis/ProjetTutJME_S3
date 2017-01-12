@@ -45,6 +45,10 @@ public class ModelEntite {
         niveau = _niveau;
         nom = _nom;
         genre = _genre;
+        force+= 3;
+        magie+= 2;
+        defenceMag+= 1;
+        defencePhy+= 2;
 
         if(niveau > 1){
             for(int i = 1; i < niveau; i++){
