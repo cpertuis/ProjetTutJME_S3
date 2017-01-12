@@ -41,6 +41,7 @@ public class FenetrePNJ extends JFrame{
         infoQuete = new JPanel(new GridLayout(2,1));
         infoPNJ = new JPanel(new GridLayout(1,2));
         texteQuete= new JTextArea("");
+        texteQuete.setEditable(false);
         accepter = new JButton("Accepter");
         accepter.setBackground(new Color(0,255,0));
         refuser = new JButton("Refuser");
