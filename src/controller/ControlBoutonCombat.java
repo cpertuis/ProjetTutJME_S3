@@ -15,7 +15,7 @@ public class ControlBoutonCombat implements ActionListener{
   public int choixMob;
   public boolean degatSta;
   
-  public ControlButtonFenetre(ModelHero mHero,ModelHero mMob,FenetreJeu fenetreJeu){
+  public ControlButtonFenetre(ModelHero mHero,ModelHero mMob,Fenetre fenetreJeu){
     this.fenetreJeu = fenetreJeu;
     this.mHero=mHero;
     this.mMob=mMob;
@@ -40,8 +40,14 @@ public class ControlBoutonCombat implements ActionListener{
           	degats = modelCombat.parade(degats);
           }
           mMob.perteVie(degats);
-		  nomLabel.setText(nomLabel.getText()+"\nLe monstre perd "+degats+"points de vies.");
-            
+		  nomLabel.setText(nomLabel.getText()+"\nLe monstre perd "+degats+" points de vies.");
+          if(mMob.estMort()){
+			fenetreJeu = new Fenetre(mMob, mHero, 3);
+			break;
+		  }
+		  else{
+			  fenetreJeu = new Fenetre(mMob,mHero,2,nomLabel);
+		  }
           degatSta = false;
           while(degatSta == false){
 		  	choixMob = rand.nextInt(2);
@@ -59,13 +65,15 @@ public class ControlBoutonCombat implements ActionListener{
 		   		degatSta = false;
 		   	}
 		  }
+		  nomLabel.setText(nomLabel.getText()+"\nLe monstre vous attaque que faite vous ?");
+		  
 	  }
 	  else{
-		  if (actionEvent.getActionCommand().equals("Defense Physique")){
-		  //To do
+		  if (actionEvent.getActionCommand().equals("Esquive")){
+			degats = modelCombat.esquive(degats);
 		  }
-		  if (actionEvent.getActionCommand().equals("Defense Magique")){
-		  //To do
+		  if (actionEvent.getActionCommand().equals("Parade")){
+			degats = modelCombat.parade(degats);
 		}
 	  }  
     }
