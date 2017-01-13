@@ -176,10 +176,10 @@ public class Fenetre extends JFrame{
     }
     
     public void initAttribute(ModelHero hero, ModelMob monstre){
-    	icon = new ImageIcon(new ImageIcon("mon_image.jpg").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+    	icon = new ImageIcon(new ImageIcon(hero.image).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
     	image = new JLabel( icon);
     	vieJoueur = new JLabel(hero.getVie()+"/"+hero.getVieMax());
-    	icon2 = new ImageIcon(new ImageIcon("mon_image2.jpg").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+    	icon2 = new ImageIcon(new ImageIcon(monstre.image).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
     	image2 = new JLabel( icon2);
     	vieMob = new JLabel(monstre.getVie()+"/"+monstre.getVieMax());
         attaquePhy = new JButton("Attaque Physique"); // Creation des objets Ã  ajouter
