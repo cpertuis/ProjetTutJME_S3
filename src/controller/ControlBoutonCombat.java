@@ -4,6 +4,8 @@ import model.ModelHero;
 import model.ModelMob;
 import view.Fenetre;
 import view.FenetreJeu;
+import java.util.Random;
+
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +21,7 @@ public class ControlBoutonCombat implements ActionListener{
     public boolean degatSta;
     public ModelCombat modelCombat;
     public Fenetre fenetre;
+	public Random rand = new Random();
   
     public ControlBoutonCombat(ModelHero mHero, ModelMob mMob, Fenetre fenetre){
         degats = 0;
