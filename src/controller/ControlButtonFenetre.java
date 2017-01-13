@@ -48,15 +48,15 @@ public class ControlButtonFenetre implements ActionListener {
         if (actionEvent.getActionCommand().equals("Combattre")){
         	if(actionEvent.getSource()== fenetreJeu.bInteractionCampement){
         		ModelMob mob = new ModelMob("Goblin",5, ModelEntite.Genre.HOMME);
-            	new Fenetre(mob,mHero,1);
+            	Fenetre fen = new Fenetre(mob,mHero,1);
         	}
         	if(actionEvent.getSource()== fenetreJeu.bInteractionCaverne){
         		ModelMob mob = new ModelMob("Dragon",4, ModelEntite.Genre.HOMME);
-            	new Fenetre(mob,mHero,1);
+                Fenetre fen = new Fenetre(mob,mHero,1);
         	}
         	if(actionEvent.getSource()== fenetreJeu.bInteractionForet){
         		ModelMob mob = new ModelMob("Treant",3, ModelEntite.Genre.NONDEF);
-            	new Fenetre(mob,mHero,1);
+                Fenetre fen = new Fenetre(mob,mHero,1);
         	}
         }
         if(actionEvent.getActionCommand().equals("Sauver")){

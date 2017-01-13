@@ -5,6 +5,7 @@ import javax.swing.*;
 import controller.ControlBoutonCombat;
 import model.ModelHero;
 import model.ModelMob;
+import org.lwjgl.Sys;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -12,12 +13,12 @@ import java.awt.event.ActionListener;
 public class Fenetre extends JFrame{
 
     public ControlBoutonCombat controlBoutonCombat;
-	protected JButton attaquePhy;
+	public JButton attaquePhy;
 	protected JButton ok;
 	protected JButton newCombat;
-	protected JButton attaqueMag;
-	protected JButton defPhy;
-	protected JButton defMag;
+	public JButton attaqueMag;
+	public JButton defPhy;
+	public JButton defMag;
 	protected JButton enq;
 	protected JLabel image;
 	protected ImageIcon icon;
@@ -26,7 +27,7 @@ public class Fenetre extends JFrame{
 	protected JLabel image2;
 	protected JLabel vieMob;
 	protected JLabel win;
-	Protacted JLabel loos;
+	protected JLabel loos;
 	protected JPanel ligne2;
 	protected JPanel ligne3;
 	protected JPanel panNom;
@@ -69,7 +70,8 @@ public class Fenetre extends JFrame{
 	    }
 
 
-    public void creerWidget(ModelMob monstre, ModelHero hero) {    	
+    public void creerWidget(ModelMob monstre, ModelHero hero) {
+		System.out.println(monstre.image+","+hero.image);
         ligne2.setLayout(new BoxLayout(ligne2, BoxLayout.LINE_AXIS));
         ligne2.setBackground(Color.WHITE);
         ligne2.add(attaquePhy);
@@ -112,14 +114,14 @@ public class Fenetre extends JFrame{
 	    gbc.gridy = 2;
 	    gbc.gridheight = 1;
 	    gbc.gridwidth = 1;
-	    global.add(vieJoueur, gbc);
+	    global.add(vieMob, gbc);
 	    
 	    
 	    gbc.gridx = 2;
 	    gbc.gridy = 2;
 	    gbc.gridheight = 1;
 	    gbc.gridwidth = 1;
-	    global.add(vieMob, gbc);
+	    global.add(vieJoueur, gbc);
 
 	    setContentPane(global);
     }
@@ -167,14 +169,14 @@ public class Fenetre extends JFrame{
 	    gbc.gridy = 2;
 	    gbc.gridheight = 1;
 	    gbc.gridwidth = 1;
-	    global.add(vieJoueur, gbc);
+	    global.add(vieMob, gbc);
 	    
 	    
 	    gbc.gridx = 2;
 	    gbc.gridy = 2;
 	    gbc.gridheight = 1;
 	    gbc.gridwidth = 1;
-	    global.add(vieMob, gbc);
+	    global.add(vieJoueur, gbc);
 
 	    setContentPane(global);
     }
@@ -198,7 +200,7 @@ public class Fenetre extends JFrame{
 	    gbc.gridy = 3;
 	    gbc.gridheight = 1;
 	    gbc.gridwidth = 1;
-	    global.add(panWin, gbc);
+	    global.add(panNom, gbc);
 
 	    setContentPane(global);
     }
@@ -218,7 +220,7 @@ public class Fenetre extends JFrame{
 	    gbc.gridy = 3;
 	    gbc.gridheight = 1;
 	    gbc.gridwidth = 1;
-	    global.add(panWin, gbc);
+	    global.add(panNom, gbc);
 
 	    setContentPane(global);
     }

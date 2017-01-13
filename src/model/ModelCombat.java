@@ -73,7 +73,7 @@ public class ModelCombat {
         if(esquive <= ESQUIVE_BASE){
             degats = 5;
         }
-        else if(esquive >=95){
+        else{
             degats = degats+ 5;
         }
         return degats;

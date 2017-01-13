@@ -20,6 +20,8 @@ public class ControlBoutonCombat implements ActionListener{
     public Fenetre fenetre;
   
     public ControlBoutonCombat(ModelHero mHero, ModelMob mMob, Fenetre fenetre){
+        degats = 0;
+        modelCombat = new ModelCombat();
         this.mHero=mHero;
         this.mMob=mMob;
         this.fenetre = fenetre;
@@ -27,14 +29,17 @@ public class ControlBoutonCombat implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent actionEvent) {
-        if (actionEvent.getActionCommand().equals("Attaque Physique") || actionEvent.getActionCommand().equals("Attaque Magique")) {
+        if (actionEvent.getSource() == fenetre.attaquePhy || actionEvent.getSource() == fenetre.attaqueMag) {
 
             if (actionEvent.getActionCommand().equals("Attaque Physique")) {
                 degats = modelCombat.attaquePhy(mHero);
+                System.out.println(degats);
                 degats = modelCombat.defencePhy(degats, mMob);
+
             }
             if (actionEvent.getActionCommand().equals("Attaque Magique")) {
                 degats = modelCombat.attaqueMag(mHero);
+                System.out.println(degats);
                 degats = modelCombat.defenceMag(degats, mMob);
             }
             choixMob = rand.nextInt(2);
@@ -44,7 +49,7 @@ public class ControlBoutonCombat implements ActionListener{
                 degats = modelCombat.parade(degats);
             }
             mMob.perteVie(degats);
-            fenetre.nomLabel.setText("<html>"+fenetre.nomLabel.getText() + "<br> Le monstre perd " + degats + " points de vies.<html>");
+            fenetre.nomLabel.setText("Le monstre perd " + degats + " points de vies.");
             if (mMob.estMort()) {
                 fenetre.dispose();
                 fenetre = new Fenetre(mMob, mHero, 3);
@@ -67,7 +72,7 @@ public class ControlBoutonCombat implements ActionListener{
                     degatSta = false;
                 }
             }
-            fenetre.nomLabel.setText(fenetre.nomLabel.getText() + "\nLe monstre vous attaque que faite vous ?");
+            fenetre.nomLabel.setText("Le monstre vous attaque que faite vous ?");
 
         } else {
             if (actionEvent.getActionCommand().equals("Esquive")) {
@@ -80,7 +85,7 @@ public class ControlBoutonCombat implements ActionListener{
                 degats = degats - 1;
             }
             mHero.perteVie(degats);
-            fenetre.nomLabel.setText(fenetre.nomLabel.getText() + "\nVous perdez " + degats + " depoints de vie.");
+            fenetre.nomLabel.setText("Vous perdez " + degats + " depoints de vie.");
             if (mHero.estMort()) {
                 fenetre.dispose();
                 fenetre = new Fenetre(mMob, mHero, 4);
