@@ -19,7 +19,6 @@ public class ControlButtonQuetes implements ActionListener {
         if(actionEvent.getSource() ==  quetes.buttonExit){
             quetes.dispose();
         }
-
         if (actionEvent.getSource() == quetes.abandon){
             /*
             if (quetes.modelHero.queteCourante.getNumeroPNJ()==1){
