@@ -126,9 +126,9 @@ public class FenetreJeu extends JFrame {
         objectif2 = new ModelObjectif(2);
         objectif3 = new ModelObjectif(1);
 
-        mob1 = new ModelMob("Tréant");
-        mob2 = new ModelMob("Bandit");
-        mob3 = new ModelMob("Dragon");
+        mob1 = new ModelMob("Tréant",3, ModelEntite.Genre.NONDEF);
+        mob2 = new ModelMob("Bandit", 2, ModelEntite.Genre.HOMME);
+        mob3 = new ModelMob("Dragon", 4, ModelEntite.Genre.HOMME);
 
         quete1 = new ModelQuete("Du bois pour les chopines", "Bien le bonjour, \nEst ce que vous pouvez m'aider, j'aurais besoin de \nbois pour mes chopines. Mais pas n'importe \nlequel, du bois de tréants, Y'en a dans la forêt, \nVous pourriez aller m'en chercher ?", mob1, objectif1,1);
         quete2 = new ModelQuete("Pas de bandits chez moi", "Vous là, ça vous dirait de casser du bandits ? \nY'en a plein dans le campement pas loin du\n village, et ils menacent la paix chez nous. \nAllez y et revenez quand \nce sera fini !", mob2, objectif2,2);

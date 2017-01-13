@@ -57,10 +57,10 @@ public class ControlBoutonCombat implements ActionListener{
                 String options[]={ " Ok "};
                 String message = "Vous avez gagné le combat !";
                 d.showOptionDialog(null,message,"Victoire",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
-                if(mMob == mHero.queteCourante.getMob()){
+                if(mMob.getClasse() == mHero.queteCourante.getMob().getClasse()){
                     mHero.queteCourante.updateQuete();
+                    System.out.println(mHero.queteCourante.getSuccess());
                 }
-                fenetre = new Fenetre(mMob, mHero, 3);
             } else {
                 fenetre.dispose();
                 fenetre = new Fenetre(mMob, mHero, 2, fenetre.nomLabel);

@@ -60,7 +60,7 @@ public class ModelQuete {
     }
 
     public void updateQuete(){
-        objectif.setEtatAvancementObjectif(objectif.getObjectif()+1);
+        objectif.setEtatAvancementObjectif(objectif.getEtatAvancementObjectif()+1);
         verifQuete();
     }
 

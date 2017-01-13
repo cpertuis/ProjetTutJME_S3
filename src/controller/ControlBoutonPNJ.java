@@ -30,6 +30,7 @@ public class ControlBoutonPNJ implements ActionListener{
             fenetrePNJ.dispose();
             fenetrePNJ.queteAcceptee(modelPnj.getQuete());
             modelPnj.setQueteDonnee(true);
+
         }
 
         if(event.getSource() == fenetrePNJ.refuser){

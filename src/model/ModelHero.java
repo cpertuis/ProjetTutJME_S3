@@ -121,7 +121,7 @@ public class ModelHero extends ModelEntite {
                     vieMax = 500;
                     setDefenceMag(15);
                     setDefencePhy(20);
-                    setForce(8);
+                    setForce(15);
                     setMagie(4);
                     break;
                 case 3 :
