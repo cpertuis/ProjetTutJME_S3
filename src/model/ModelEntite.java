@@ -7,8 +7,8 @@ import java.io.PrintStream;
  */
 public class ModelEntite {
 
-    protected int vie;
-    protected int vieMax;
+    protected double vie;
+    protected double vieMax;
     protected int niveau;
     protected int force;
     protected int magie;
@@ -64,11 +64,11 @@ public class ModelEntite {
         }
     }
 
-    public void setVie(int vie){
+    public void setVie(double vie){
         this.vie = vie;
     }
 
-    public void setVieMax(int vieMax){
+    public void setVieMax(double vieMax){
         this.vieMax = vieMax;
     }
 
@@ -121,11 +121,11 @@ public class ModelEntite {
         this.nom = nom;
     }
 
-    public int getVie(){
+    public double getVie(){
         return vie;
     }
 
-    public int getVieMax() {
+    public double getVieMax() {
         return vieMax;
     }
 
@@ -185,7 +185,7 @@ public class ModelEntite {
         return false;
     }
 
-    public void perteVie(int degats){
+    public void perteVie(double degats){
         setVie(vie-degats);
     }
 

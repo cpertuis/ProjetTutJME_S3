@@ -2,24 +2,16 @@ package view;
 
 import javax.swing.*;
 
-import controller.ControlBouton;
-import model.ModelEntite;
+import controller.ControlBoutonCombat;
 import model.ModelHero;
 import model.ModelMob;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
-
-
 
 public class Fenetre extends JFrame{
 
-    //public ControlButton controlBut;
-	//public ControlMenu controlMen;
+    public ControlBoutonCombat controlBoutonCombat;
 	protected JButton attaquePhy;
 	protected JButton attaqueMag;
 	protected JButton defPhy;
@@ -34,13 +26,9 @@ public class Fenetre extends JFrame{
 	protected JPanel ligne2;
 	protected JPanel ligne3;
 	protected JPanel panNom;
-	protected JLabel nomLabel;
+	public JLabel nomLabel;
 	protected JPanel global;
 	protected GridBagConstraints gbc;
-
-
-
-
 
 	 public Fenetre(ModelMob monstre, ModelHero hero, int stat) {
 			setTitle("Combat");
@@ -55,6 +43,7 @@ public class Fenetre extends JFrame{
 			}
 			setSize(900,600);                                // Fixe la taille par dÃ©faut
 			setVisible(true);                                // Affiche la fenetre
+		 	setLocationRelativeTo(null);                     // Affiche au milieu de l'écran
 			setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);  // Gestion de la fermeture
 	    } 
 	 
@@ -71,7 +60,8 @@ public class Fenetre extends JFrame{
 			}
 			setSize(900,600);                                // Fixe la taille par dÃ©faut
 			setVisible(true);                                // Affiche la fenetre
-			setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);  // Gestion de la fermeture
+		 	setLocationRelativeTo(null);                     // Affiche au milieu de l'écran
+		 	setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);  // Gestion de la fermeture
 	    }
 
 
@@ -203,20 +193,8 @@ public class Fenetre extends JFrame{
         nomLabel = new JLabel(monstre.getNom());
         global = new JPanel();
 	    gbc = new GridBagConstraints();
+		controlBoutonCombat = new ControlBoutonCombat(hero,monstre,this);
     }
-
-    public static void main(String[] args) {
-    	 
-        javax.swing.SwingUtilities.invokeLater( new Runnable() {
-     
-          public void run() {
-        	  ModelMob monstre = new ModelMob("paul");
-        	  ModelHero hero = new ModelHero("raph");
-              Fenetre fen = new Fenetre(monstre,hero,1);
-          }
-        });
-      }
-
 
     public void setInteraction(ActionListener listener) {
     	attaquePhy.addActionListener(listener);
