@@ -13,6 +13,8 @@ public class Fenetre extends JFrame{
 
     public ControlBoutonCombat controlBoutonCombat;
 	protected JButton attaquePhy;
+	protected JButton ok;
+	protected JButton newCombat;
 	protected JButton attaqueMag;
 	protected JButton defPhy;
 	protected JButton defMag;
@@ -23,6 +25,8 @@ public class Fenetre extends JFrame{
 	protected ImageIcon icon2;
 	protected JLabel image2;
 	protected JLabel vieMob;
+	protected JLabel win;
+	Protacted JLabel loos;
 	protected JPanel ligne2;
 	protected JPanel ligne3;
 	protected JPanel panNom;
@@ -174,6 +178,50 @@ public class Fenetre extends JFrame{
 
 	    setContentPane(global);
     }
+	
+	public void creerWidget3(ModelMob monstre, ModelHero hero) { 
+        
+		ligne3.setLayout(new BoxLayout(ligne3, BoxLayout.LINE_AXIS));
+        ligne3.add(ok);
+        ligne3.add(newCombat);
+		
+        panNom.setBackground(Color.white);
+        panNom.setPreferredSize(new Dimension(300, 100));
+        panNom.setBorder(BorderFactory.createTitledBorder("Combat"));
+        panNom.add(win);
+            
+	    global.setPreferredSize(new Dimension(900, 600));
+	    global.setBackground(Color.WHITE);
+	    global.setLayout(new GridBagLayout());
+
+	    gbc.gridx = 3;
+	    gbc.gridy = 3;
+	    gbc.gridheight = 1;
+	    gbc.gridwidth = 1;
+	    global.add(panWin, gbc);
+
+	    setContentPane(global);
+    }
+	
+	public void creerWidget4(ModelMob monstre, ModelHero hero) { 
+        
+        panNom.setBackground(Color.white);
+        panNom.setPreferredSize(new Dimension(300, 100));
+        panNom.setBorder(BorderFactory.createTitledBorder("Combat"));
+        panNom.add(loos);
+            
+	    global.setPreferredSize(new Dimension(900, 600));
+	    global.setBackground(Color.WHITE);
+	    global.setLayout(new GridBagLayout());
+
+	    gbc.gridx = 3;
+	    gbc.gridy = 3;
+	    gbc.gridheight = 1;
+	    gbc.gridwidth = 1;
+	    global.add(panWin, gbc);
+
+	    setContentPane(global);
+    }
     
     public void initAttribute(ModelHero hero, ModelMob monstre){
     	icon = new ImageIcon(new ImageIcon(hero.image).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
@@ -187,10 +235,14 @@ public class Fenetre extends JFrame{
         defPhy = new JButton("Esquive");
         defMag = new JButton("Parade");
         enq = new JButton("Encaisser");
+		ok = new JButton("OK");
+		newCombat = new JButton("Nouveau combat");
         ligne2 = new JPanel();
         ligne3 = new JPanel();
         panNom = new JPanel();
         nomLabel = new JLabel(monstre.getNom());
+		win = new JLabel("Vous avez gagné");
+		loos = new JLabel("Vous avez perdu");
         global = new JPanel();
 	    gbc = new GridBagConstraints();
 		controlBoutonCombat = new ControlBoutonCombat(hero,monstre,this);
@@ -202,11 +254,15 @@ public class Fenetre extends JFrame{
     	defPhy.addActionListener(listener);
     	defMag.addActionListener(listener);
     	enq.addActionListener(listener);
+    	ok.addActionListener(listener);
+    	newCombat.addActionListener(listener);
     	attaquePhy.setActionCommand("Attaque physique");
     	attaqueMag.setActionCommand("Attaque magique");
-    	defPhy.setActionCommand("Defence physique");
-    	defMag.setActionCommand("Defence magique");
-    	enq.setActionCommand("Esquive");
+    	defPhy.setActionCommand("Esquive");
+    	defMag.setActionCommand("Parade");
+    	enq.setActionCommand("Encaisser");
+    	ok.setActionCommand("ok");
+    	newCombat.setActionCommand("Nouveau Combat");
     }
 
 }

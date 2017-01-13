@@ -83,7 +83,7 @@ public class ControlBoutonCombat implements ActionListener{
             fenetre.nomLabel.setText(fenetre.nomLabel.getText() + "\nVous perdez " + degats + " depoints de vie.");
             if (mHero.estMort()) {
                 fenetre.dispose();
-                fenetre = new Fenetre(mMob, mHero, 3);
+                fenetre = new Fenetre(mMob, mHero, 4);
             } else {
                 fenetre.dispose();
                 fenetre = new Fenetre(mMob, mHero, 1, fenetre.nomLabel);
