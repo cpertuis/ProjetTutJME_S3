@@ -5,6 +5,7 @@ import model.ModelMob;
 import view.Fenetre;
 import view.FenetreJeu;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -52,6 +53,13 @@ public class ControlBoutonCombat implements ActionListener{
             fenetre.nomLabel.setText("Le monstre perd " + degats + " points de vies.");
             if (mMob.estMort()) {
                 fenetre.dispose();
+                JOptionPane d = new JOptionPane();
+                String options[]={ " Ok "};
+                String message = "Vous avez gagné le combat !";
+                d.showOptionDialog(null,message,"Victoire",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
+                if(mMob == mHero.queteCourante.getMob()){
+                    mHero.queteCourante.updateQuete();
+                }
                 fenetre = new Fenetre(mMob, mHero, 3);
             } else {
                 fenetre.dispose();

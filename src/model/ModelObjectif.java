@@ -27,7 +27,7 @@ public class ModelObjectif {
         etatAvancementObjectif = _avancementObjectif;
     }
 
-    private boolean verifObjectifAtteint(){
+    public boolean verifObjectifAtteint(){
         if(objectif == etatAvancementObjectif){
             return true;
         }

@@ -50,7 +50,7 @@ public class ModelQuete {
     }
 
     public void verifQuete(){
-        if(objectif.getEtatAvancementObjectif() == objectif.getObjectif()){
+        if(objectif.verifObjectifAtteint()){
             setSuccess(true);
         }
     }
@@ -60,7 +60,12 @@ public class ModelQuete {
     }
 
     public void updateQuete(){
+        objectif.setEtatAvancementObjectif(objectif.getObjectif()+1);
+        verifQuete();
+    }
 
+    public ModelMob getMob(){
+        return mob;
     }
 
     public int getNumeroPNJ() {
