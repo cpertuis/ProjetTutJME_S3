@@ -85,6 +85,12 @@ public class FenetreJeu extends JFrame {
     public JPanel pMilieuTaverne;
     public JPanel pDialogue;
 
+    public JLabel imgMilieuCampement;
+    public JLabel imgMilieuCaverne;
+    public JLabel imgMilieuChateau;
+    public JLabel imgMilieuForet;
+    public JLabel imgMilieuTaverne;
+
     public JPanel pBoutonsCampement;
     public JPanel pBoutonsCaverne;
     public JPanel pBoutonsChateau;
@@ -101,14 +107,6 @@ public class FenetreJeu extends JFrame {
     public JButton buttonSauverChateau;
     public JButton buttonSauverForet;
     public JButton buttonSauverTaverne;
-
-
-    public JTextArea tableauAllCampement;
-    public JTextArea tableauAllCaverne;
-    public JTextArea tableauAllChateau;
-    public JTextArea tableauAllForet;
-    public JTextArea tableauAllTaverne;
-
 
     public FenetreJeu(ModelHero modelH) {
 
@@ -225,6 +223,11 @@ public class FenetreJeu extends JFrame {
         imgForet = new JLabel( new ImageIcon( "img/Foret.jpg"));
         imgCampement = new JLabel( new ImageIcon( "img/CampementBandit.jpg"));
         imgTaverne = new JLabel( new ImageIcon( "img/Taverne.jpg"));
+        imgMilieuCampement = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuChateau = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuForet = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuCaverne = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuTaverne = new JLabel(new ImageIcon("img/imageMilieu.png"));
 
         imgCaverne.setPreferredSize(new Dimension(20,20));
         imgChateau.setPreferredSize(new Dimension(20,20));
@@ -244,27 +247,16 @@ public class FenetreJeu extends JFrame {
         bInteractionTaverne1.setPreferredSize(new Dimension(150, 50));
         bInteractionTaverne2 = new JButton("Aventurier");
         bInteractionTaverne2.setPreferredSize(new Dimension(150, 50));
-        tableauAllCampement = new JTextArea("");
-        tableauAllCaverne = new JTextArea("");
-        tableauAllChateau = new JTextArea("");
-        tableauAllForet = new JTextArea("");
-        tableauAllTaverne = new JTextArea("");
     }
 
     public void plateauDeJeu() {
-        tableauAllCampement.setBackground(Color.LIGHT_GRAY);
-        tableauAllCaverne.setBackground(Color.LIGHT_GRAY);
-        tableauAllChateau.setBackground(Color.LIGHT_GRAY);
-        tableauAllForet.setBackground(Color.LIGHT_GRAY);
-        tableauAllTaverne.setBackground(Color.LIGHT_GRAY);
 
         pBoutonsCampement.add(buttonCaracteristiqueCampement);
         pBoutonsCampement.add(buttonQueteCampement);
         pBoutonsCampement.add(buttonSauverCampement);
         pInteractionCampement.add(bInteractionCampement);
         pMilieuCampement.add(pInteractionCampement);
-        pMilieuCampement.add(tableauAllCampement);
-        tableauAllCampement.setText("");
+        pMilieuCampement.add(imgMilieuCampement);
         pMilieuCampement.add(pBoutonsCampement);
         campement.add(imgCampement);
         campement.add(pMilieuCampement);
@@ -275,8 +267,7 @@ public class FenetreJeu extends JFrame {
         pInteractionTaverne.add(bInteractionTaverne1);
         pInteractionTaverne.add(bInteractionTaverne2);
         pMilieuTaverne.add(pInteractionTaverne);
-        pMilieuTaverne.add(tableauAllTaverne);
-        tableauAllTaverne.setText("");
+        pMilieuTaverne.add(imgMilieuTaverne);
         pMilieuTaverne.add(pBoutonsTaverne);
         taverne.add(imgTaverne);
         taverne.add(pMilieuTaverne);
@@ -286,8 +277,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsForet.add(buttonSauverForet);
         pInteractionForet.add(bInteractionForet);
         pMilieuForet.add(pInteractionForet);
-        pMilieuForet.add(tableauAllForet);
-        tableauAllForet.setText("");
+        pMilieuForet.add(imgMilieuForet);
         pMilieuForet.add(pBoutonsForet);
         foret.add(imgForet);
         foret.add(pMilieuForet);
@@ -297,8 +287,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsCaverne.add(buttonSauverCaverne);
         pInteractionCaverne.add(bInteractionCaverne);
         pMilieuCaverne.add(pInteractionCaverne);
-        pMilieuCaverne.add(tableauAllCaverne);
-        tableauAllCaverne.setText("");
+        pMilieuCaverne.add(imgMilieuCaverne);
         pMilieuCaverne.add(pBoutonsCaverne);
         caverne.add(imgCaverne);
         caverne.add(pMilieuCaverne);
@@ -308,8 +297,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsChateau.add(buttonSauverChateau);
         pInteractionChateau.add(bInteractionChateau);
         pMilieuChateau.add(pInteractionChateau);
-        pMilieuChateau.add(tableauAllChateau);
-        tableauAllChateau.setText("");
+        pMilieuChateau.add(imgMilieuChateau);
         pMilieuChateau.add(pBoutonsChateau);
         chateau.add(imgChateau);
         chateau.add(pMilieuChateau);
