@@ -41,7 +41,7 @@ public class ModelHero extends ModelEntite {
         queteCourante = null;
     }
 
-    public ModelHero(int vie, int niveau, String nom, Genre _genre, int _classe){
+    public ModelHero(double vie, int niveau, String nom, Genre _genre, int _classe){
         super(vie,niveau,nom,_genre);
         classe = null;
         setClasseChargementPerso(_classe);

@@ -42,7 +42,7 @@ public class ModelEntite {
         genre = _genre;
     }
 
-    ModelEntite(int _vie, int _niveau,String _nom, Genre _genre){
+    ModelEntite(double _vie, int _niveau,String _nom, Genre _genre){
         vie = _vie;
         niveau = _niveau;
         nom = _nom;

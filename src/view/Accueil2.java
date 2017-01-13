@@ -107,9 +107,9 @@ public class Accueil2 extends JFrame{
         while ((line = br.readLine()) != null) {
             String tabs[] = line.split(",");
             if(tabs[3].equals("1")) {
-                h = new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.FEMMME,Integer.parseInt(tabs[4]));
+                h = new ModelHero(Double.parseDouble(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.FEMMME,Integer.parseInt(tabs[4]));
             } else if(tabs[3].equals("2")){
-                h = new ModelHero(Integer.parseInt(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
+                h = new ModelHero(Double.parseDouble(tabs[0]),Integer.parseInt(tabs[1]),tabs[2],ModelEntite.Genre.HOMME,Integer.parseInt(tabs[4]));
             }
             br.close();
             return h;
