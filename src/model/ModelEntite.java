@@ -15,6 +15,7 @@ public class ModelEntite {
     protected int attaquePhy;
     protected int attaqueMag;
     protected int defencePhy;
+	protected String image;
     protected int defenceMag;
     public enum Genre {
         HOMME("Homme"),
