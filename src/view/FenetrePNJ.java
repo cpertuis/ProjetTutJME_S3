@@ -90,4 +90,16 @@ public class FenetrePNJ extends JFrame{
         }
         setContentPane(global);
     }
+
+    public void queteAcceptee(ModelQuete quete){
+        if(modelHero.getQueteEnCours() == false){
+            modelHero.queteCourante = quete;
+        }
+        else{
+            JOptionPane jOptionPane = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous avez déja une quête en cours";
+            jOptionPane.showOptionDialog(null,message,"Attention",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
+        }
+    }
 }
