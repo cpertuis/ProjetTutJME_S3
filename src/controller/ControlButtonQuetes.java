@@ -17,7 +17,20 @@ public class ControlButtonQuetes implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
 
         if(actionEvent.getSource() ==  quetes.buttonExit){
-            quetes.setVisible(false);
+            quetes.dispose();
+        }
+
+        if (actionEvent.getSource() == quetes.abandon){
+            /*
+            if (quetes.modelHero.queteCourante.getNumeroPNJ()==1){
+                quetes.fenetreJeu.pnj1.setQueteDonnee(false);}
+            if (quetes.modelHero.queteCourante.getNumeroPNJ()==2){
+                quetes.fenetreJeu.pnj2.setQueteDonnee(false);}
+            if (quetes.modelHero.queteCourante.getNumeroPNJ()==3){
+                quetes.fenetreJeu.pnj3.setQueteDonnee(false);}
+             */
+            quetes.modelHero.setQueteEnCours(false);
+            quetes.repaint();
         }
     }
 }

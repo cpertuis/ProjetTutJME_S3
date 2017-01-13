@@ -93,6 +93,8 @@ public class ModelPnj extends ModelEntite{
         quete.print();
     }
 
+
+
     public ModelQuete getQuete() {
         return quete;
     }

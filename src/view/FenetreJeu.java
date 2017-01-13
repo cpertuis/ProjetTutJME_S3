@@ -129,9 +129,9 @@ public class FenetreJeu extends JFrame {
         mob2 = new ModelMob("Bandit");
         mob3 = new ModelMob("Dragon");
 
-        quete1 = new ModelQuete("Du bois pour les chopines", "Bien le bonjour, \nEst ce que vous pouvez m'aider, j'aurais besoin de bois pour mes chopines. \nMais pas n'importe lequel, du bois de tréants, Y'en a dans la forêt, \nVous pourriez aller m'en chercher ?", mob1, objectif1);
-        quete2 = new ModelQuete("Pas de bandits chez moi", "Vous là, ça vous dirait de casser du bandits ? \nY'en a plein dans le campement pas loin du village, \net ils menacent la paix chez nous. Allez y est revenez quand ce sera fini !", mob2, objectif2);
-        quete3 = new ModelQuete("Du feu dans la caverne", "Aventuriez, je suis content de vous voir, \nUne créature puissante a élu domicile dans la caverne au nord. \n Il faudrait la déloger, je peux compter sur vous ?", mob3, objectif3);
+        quete1 = new ModelQuete("Du bois pour les chopines", "Bien le bonjour, \nEst ce que vous pouvez m'aider, j'aurais besoin de \nbois pour mes chopines. Mais pas n'importe \nlequel, du bois de tréants, Y'en a dans la forêt, \nVous pourriez aller m'en chercher ?", mob1, objectif1,1);
+        quete2 = new ModelQuete("Pas de bandits chez moi", "Vous là, ça vous dirait de casser du bandits ? \nY'en a plein dans le campement pas loin du\n village, et ils menacent la paix chez nous. \nAllez y et revenez quand \nce sera fini !", mob2, objectif2,2);
+        quete3 = new ModelQuete("Du feu dans la caverne", "Aventuriez, je suis content de vous voir, \nUne créature puissante a élu domicile \ndans la caverne au nord. \n Il faudrait la déloger, je peux compter sur \nvous ?", mob3, objectif3,3);
 
         pnj1 = new ModelPnj("Tavernier", quete1, ModelEntite.Genre.HOMME);
         pnj2 = new ModelPnj("Skovald", quete2, ModelEntite.Genre.HOMME);
@@ -338,6 +338,7 @@ public class FenetreJeu extends JFrame {
         bInteractionChateau.addActionListener(listener);
         bInteractionForet.addActionListener(listener);
         bInteractionTaverne1.addActionListener(listener);
+        bInteractionTaverne2.addActionListener(listener);
 
         buttonCaracteristiqueCampement.setActionCommand("Caracteristique");
         buttonCaracteristiqueCaverne.setActionCommand("Caracteristique");
@@ -362,6 +363,7 @@ public class FenetreJeu extends JFrame {
         bInteractionChateau.setActionCommand("Jarl");
         bInteractionForet.setActionCommand("Combattre");
         bInteractionTaverne1.setActionCommand("Tavernier");
+        bInteractionTaverne2.setActionCommand("Aventurier");
 
     }
 
