@@ -25,7 +25,6 @@ public class FenetreJeu extends JFrame {
     protected ModelQuete quete1;
     protected ModelQuete quete2;
     protected ModelQuete quete3;
-    public ModelQuete queteCourante;
 
     protected ModelObjectif objectif1;
     protected ModelObjectif objectif2;
@@ -85,6 +84,12 @@ public class FenetreJeu extends JFrame {
     public JPanel pMilieuTaverne;
     public JPanel pDialogue;
 
+    public JLabel imgMilieuCampement;
+    public JLabel imgMilieuCaverne;
+    public JLabel imgMilieuChateau;
+    public JLabel imgMilieuForet;
+    public JLabel imgMilieuTaverne;
+
     public JPanel pBoutonsCampement;
     public JPanel pBoutonsCaverne;
     public JPanel pBoutonsChateau;
@@ -101,14 +106,6 @@ public class FenetreJeu extends JFrame {
     public JButton buttonSauverChateau;
     public JButton buttonSauverForet;
     public JButton buttonSauverTaverne;
-
-
-    public JTextArea tableauAllCampement;
-    public JTextArea tableauAllCaverne;
-    public JTextArea tableauAllChateau;
-    public JTextArea tableauAllForet;
-    public JTextArea tableauAllTaverne;
-
 
     public FenetreJeu(ModelHero modelH) {
 
@@ -132,9 +129,9 @@ public class FenetreJeu extends JFrame {
         mob2 = new ModelMob("Bandit");
         mob3 = new ModelMob("Dragon");
 
-        quete1 = new ModelQuete("Du bois pour les chopines", "Bien le bonjour, \nEst ce que vous pouvez m'aider, j'aurais besoin de bois pour mes chopines. \nMais pas n'importe lequel, du bois de tréants, Y'en a dans la forêt, \nVous pourriez aller m'en chercher ?", mob1, objectif1);
-        quete2 = new ModelQuete("Pas de bandits chez moi", "Vous là, ça vous dirait de casser du bandits ? \nY'en a plein dans le campement pas loin du village, \net ils menacent la paix chez nous. Allez y est revenez quand ce sera fini !", mob2, objectif2);
-        quete3 = new ModelQuete("Du feu dans la caverne", "Aventuriez, je suis content de vous voir, \nUne créature puissante a élu domicile dans la caverne au nord. \n Il faudrait la déloger, je peux compter sur vous ?", mob3, objectif3);
+        quete1 = new ModelQuete("Du bois pour les chopines", "Bien le bonjour, \nEst ce que vous pouvez m'aider, j'aurais besoin de \nbois pour mes chopines. Mais pas n'importe \nlequel, du bois de tréants, Y'en a dans la forêt, \nVous pourriez aller m'en chercher ?", mob1, objectif1,1);
+        quete2 = new ModelQuete("Pas de bandits chez moi", "Vous là, ça vous dirait de casser du bandits ? \nY'en a plein dans le campement pas loin du\n village, et ils menacent la paix chez nous. \nAllez y et revenez quand \nce sera fini !", mob2, objectif2,2);
+        quete3 = new ModelQuete("Du feu dans la caverne", "Aventuriez, je suis content de vous voir, \nUne créature puissante a élu domicile \ndans la caverne au nord. \n Il faudrait la déloger, je peux compter sur \nvous ?", mob3, objectif3,3);
 
         pnj1 = new ModelPnj("Tavernier", quete1, ModelEntite.Genre.HOMME);
         pnj2 = new ModelPnj("Skovald", quete2, ModelEntite.Genre.HOMME);
@@ -225,6 +222,11 @@ public class FenetreJeu extends JFrame {
         imgForet = new JLabel( new ImageIcon( "img/Foret.jpg"));
         imgCampement = new JLabel( new ImageIcon( "img/CampementBandit.jpg"));
         imgTaverne = new JLabel( new ImageIcon( "img/Taverne.jpg"));
+        imgMilieuCampement = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuChateau = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuForet = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuCaverne = new JLabel(new ImageIcon("img/imageMilieu.png"));
+        imgMilieuTaverne = new JLabel(new ImageIcon("img/imageMilieu.png"));
 
         imgCaverne.setPreferredSize(new Dimension(20,20));
         imgChateau.setPreferredSize(new Dimension(20,20));
@@ -236,7 +238,7 @@ public class FenetreJeu extends JFrame {
         bInteractionCampement.setPreferredSize(new Dimension(150, 50));
         bInteractionCaverne = new JButton("Combattre");
         bInteractionCaverne.setPreferredSize(new Dimension(150, 50));
-        bInteractionChateau = new JButton("Jarl");
+        bInteractionChateau = new JButton("Commandante");
         bInteractionChateau.setPreferredSize(new Dimension(150, 50));
         bInteractionForet = new JButton("Combattre");
         bInteractionForet.setPreferredSize(new Dimension(150, 50));
@@ -244,27 +246,16 @@ public class FenetreJeu extends JFrame {
         bInteractionTaverne1.setPreferredSize(new Dimension(150, 50));
         bInteractionTaverne2 = new JButton("Aventurier");
         bInteractionTaverne2.setPreferredSize(new Dimension(150, 50));
-        tableauAllCampement = new JTextArea("");
-        tableauAllCaverne = new JTextArea("");
-        tableauAllChateau = new JTextArea("");
-        tableauAllForet = new JTextArea("");
-        tableauAllTaverne = new JTextArea("");
     }
 
     public void plateauDeJeu() {
-        tableauAllCampement.setBackground(Color.LIGHT_GRAY);
-        tableauAllCaverne.setBackground(Color.LIGHT_GRAY);
-        tableauAllChateau.setBackground(Color.LIGHT_GRAY);
-        tableauAllForet.setBackground(Color.LIGHT_GRAY);
-        tableauAllTaverne.setBackground(Color.LIGHT_GRAY);
 
         pBoutonsCampement.add(buttonCaracteristiqueCampement);
         pBoutonsCampement.add(buttonQueteCampement);
         pBoutonsCampement.add(buttonSauverCampement);
         pInteractionCampement.add(bInteractionCampement);
         pMilieuCampement.add(pInteractionCampement);
-        pMilieuCampement.add(tableauAllCampement);
-        tableauAllCampement.setText("");
+        pMilieuCampement.add(imgMilieuCampement);
         pMilieuCampement.add(pBoutonsCampement);
         campement.add(imgCampement);
         campement.add(pMilieuCampement);
@@ -275,8 +266,7 @@ public class FenetreJeu extends JFrame {
         pInteractionTaverne.add(bInteractionTaverne1);
         pInteractionTaverne.add(bInteractionTaverne2);
         pMilieuTaverne.add(pInteractionTaverne);
-        pMilieuTaverne.add(tableauAllTaverne);
-        tableauAllTaverne.setText("");
+        pMilieuTaverne.add(imgMilieuTaverne);
         pMilieuTaverne.add(pBoutonsTaverne);
         taverne.add(imgTaverne);
         taverne.add(pMilieuTaverne);
@@ -286,8 +276,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsForet.add(buttonSauverForet);
         pInteractionForet.add(bInteractionForet);
         pMilieuForet.add(pInteractionForet);
-        pMilieuForet.add(tableauAllForet);
-        tableauAllForet.setText("");
+        pMilieuForet.add(imgMilieuForet);
         pMilieuForet.add(pBoutonsForet);
         foret.add(imgForet);
         foret.add(pMilieuForet);
@@ -297,8 +286,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsCaverne.add(buttonSauverCaverne);
         pInteractionCaverne.add(bInteractionCaverne);
         pMilieuCaverne.add(pInteractionCaverne);
-        pMilieuCaverne.add(tableauAllCaverne);
-        tableauAllCaverne.setText("");
+        pMilieuCaverne.add(imgMilieuCaverne);
         pMilieuCaverne.add(pBoutonsCaverne);
         caverne.add(imgCaverne);
         caverne.add(pMilieuCaverne);
@@ -308,8 +296,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsChateau.add(buttonSauverChateau);
         pInteractionChateau.add(bInteractionChateau);
         pMilieuChateau.add(pInteractionChateau);
-        pMilieuChateau.add(tableauAllChateau);
-        tableauAllChateau.setText("");
+        pMilieuChateau.add(imgMilieuChateau);
         pMilieuChateau.add(pBoutonsChateau);
         chateau.add(imgChateau);
         chateau.add(pMilieuChateau);
@@ -351,6 +338,7 @@ public class FenetreJeu extends JFrame {
         bInteractionChateau.addActionListener(listener);
         bInteractionForet.addActionListener(listener);
         bInteractionTaverne1.addActionListener(listener);
+        bInteractionTaverne2.addActionListener(listener);
 
         buttonCaracteristiqueCampement.setActionCommand("Caracteristique");
         buttonCaracteristiqueCaverne.setActionCommand("Caracteristique");
@@ -375,19 +363,8 @@ public class FenetreJeu extends JFrame {
         bInteractionChateau.setActionCommand("Jarl");
         bInteractionForet.setActionCommand("Combattre");
         bInteractionTaverne1.setActionCommand("Tavernier");
+        bInteractionTaverne2.setActionCommand("Aventurier");
 
-    }
-
-    public void queteAcceptee(ModelQuete quete){
-        if(modelH.getQueteEnCours() == false){
-            queteCourante = quete;
-        }
-        else{
-            JOptionPane jOptionPane = new JOptionPane();
-            String options[]={ " Ok "};
-            String message = "Vous avez déja une quête en cours";
-            jOptionPane.showOptionDialog(null,message,"Attention",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
-        }
     }
 
     public void display() {
