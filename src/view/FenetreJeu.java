@@ -62,6 +62,7 @@ public class FenetreJeu extends JFrame {
     public JButton bInteractionForet;
     public JButton bInteractionTaverne1;
     public JButton bInteractionTaverne2;
+    public JButton bInteractionTaverne3;
 
     public JTabbedPane onglets;
     public JPanel vide;
@@ -246,6 +247,8 @@ public class FenetreJeu extends JFrame {
         bInteractionTaverne1.setPreferredSize(new Dimension(150, 50));
         bInteractionTaverne2 = new JButton("Aventurier");
         bInteractionTaverne2.setPreferredSize(new Dimension(150, 50));
+        bInteractionTaverne3 = new JButton("Se reposer");
+        bInteractionTaverne3.setPreferredSize(new Dimension(150, 50));
     }
 
     public void plateauDeJeu() {
@@ -265,6 +268,7 @@ public class FenetreJeu extends JFrame {
         pBoutonsTaverne.add(buttonSauverTaverne);
         pInteractionTaverne.add(bInteractionTaverne1);
         pInteractionTaverne.add(bInteractionTaverne2);
+        pInteractionTaverne.add(bInteractionTaverne3);
         pMilieuTaverne.add(pInteractionTaverne);
         pMilieuTaverne.add(imgMilieuTaverne);
         pMilieuTaverne.add(pBoutonsTaverne);
@@ -339,6 +343,7 @@ public class FenetreJeu extends JFrame {
         bInteractionForet.addActionListener(listener);
         bInteractionTaverne1.addActionListener(listener);
         bInteractionTaverne2.addActionListener(listener);
+        bInteractionTaverne3.addActionListener(listener);
 
         buttonCaracteristiqueCampement.setActionCommand("Caracteristique");
         buttonCaracteristiqueCaverne.setActionCommand("Caracteristique");
@@ -364,6 +369,7 @@ public class FenetreJeu extends JFrame {
         bInteractionForet.setActionCommand("Combattre");
         bInteractionTaverne1.setActionCommand("Tavernier");
         bInteractionTaverne2.setActionCommand("Aventurier");
+        bInteractionTaverne3.setActionCommand("Soin");
 
     }
 

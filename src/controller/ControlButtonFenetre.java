@@ -5,6 +5,7 @@ import model.ModelHero;
 import model.ModelMob;
 import view.*;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -27,6 +28,13 @@ public class ControlButtonFenetre implements ActionListener {
             afficherQuetes();
         }
 
+        if (actionEvent.getActionCommand().equals("Soin")){
+            mHero.setVie(mHero.getVieMax());
+            JOptionPane jOptionPane = new JOptionPane();
+            String options[]={ " Ok "};
+            String message = "Vous avez regagné votre vie";
+            jOptionPane.showOptionDialog(null,message,"Attention",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,options,options[0]);
+        }
         if(actionEvent.getSource() == fenetreJeu.bInteractionTaverne1){
             if(actionEvent.getActionCommand().equals("Tavernier")){
                 new FenetrePNJ(mHero,fenetreJeu.pnj1);
