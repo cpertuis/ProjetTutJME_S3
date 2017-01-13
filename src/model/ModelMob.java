@@ -58,30 +58,30 @@ public class ModelMob extends ModelEntite{
     		case 2:
     			this.classe = Type.BANDIT;
                 image = "img/bandit.png";
-    			vieMax = 500;
+    			vieMax = 200;
                 vie = vieMax;
-                setDefenceMag(20);
-                setDefencePhy(20);
+                setDefenceMag(2);
+                setDefencePhy(4);
                 setForce(15);
                 setMagie(15);
                 break;
     		case 3:
     			this.classe = Type.TREANT;
                 image = "img/treant.png";
-    			vieMax = 750;
+    			vieMax = 300;
                 vie = vieMax;
-                setDefenceMag(2);
-                setDefencePhy(5);
+                setDefenceMag(3);
+                setDefencePhy(3);
                 setForce(10);
                 setMagie(10);
                 break;
     		case 4:
     			this.classe = Type.BOSS;
                 image = "img/dragon.png";
-    			vieMax = 2000;
+    			vieMax = 1000;
                 vie = vieMax;
-                setDefenceMag(20);
-                setDefencePhy(20);
+                setDefenceMag(10);
+                setDefencePhy(10);
                 setForce(30);
                 setMagie(20);
                 break;
