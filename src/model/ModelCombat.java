@@ -48,10 +48,10 @@ public class ModelCombat {
         int plus = input.nextInt(magie);
         double degats = 1;
         if(plus <= magie/2){
-            degats = magie - input.nextInt(10);
+            degats = magie - input.nextInt(5);
         }
         else if(plus <= (magie/4)*3){
-            degats = magie + (input.nextInt(20)-10);
+            degats = magie + (input.nextInt(20)-5);
         }
         else{
             degats = magie + input.nextInt(10);
