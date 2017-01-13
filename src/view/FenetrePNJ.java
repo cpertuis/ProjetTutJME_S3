@@ -54,20 +54,23 @@ public class FenetrePNJ extends JFrame{
         refuser.setMaximumSize(new Dimension(150, 50));
 
         nomPnj = new JLabel(modelPnj.getNom());
-        if (modelHero.getQueteEnCours()){
-            texteQuete.setText("Vous avez déja une quête en cours \n Revenez plus tard");
-            global =new JPanel(new GridBagLayout());
-        }else {
+        if (!modelHero.getQueteEnCours()){
             if (modelPnj.getQueteDonnee()){
                 if (modelPnj.getQuete().getSuccess()){
                     texteQuete.setText("Bravo vous avez réussi ma quête. \n\n\n\n\n Vous avez gagné un niveau.");
-                    global =new JPanel();                } else {
-                    texteQuete.setText("Vous n'avez pas fini ma quête. \n Revenez plus tard.");
                     global =new JPanel();
                 }
             }else {
                 texteQuete.setText(modelPnj.getQuete().toString());
                 global =new JPanel(new GridBagLayout());
+            }
+        }else {
+            if (modelPnj.getQuete().equals(modelHero.queteCourante)){
+                texteQuete.setText("Vous n'avez pas fini ma quête. \n Revenez plus tard.");
+                global =new JPanel();
+            }else {
+                texteQuete.setText("Vous avez déja une quête en cours \n Revenez plus tard");
+                global = new JPanel(new GridBagLayout());
             }
         }
 
