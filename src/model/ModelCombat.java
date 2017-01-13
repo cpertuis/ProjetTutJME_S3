@@ -71,7 +71,7 @@ public class ModelCombat {
     public double esquive(double degats){
         int esquive = input.nextInt(100);
         if(esquive <= ESQUIVE_BASE){
-            degats = 5;
+            degats = 0;
         }
         else{
             degats = degats+ 5;
@@ -82,7 +82,7 @@ public class ModelCombat {
     public double parade(double degats){
         int parade = input.nextInt(100);
         if(parade <= PARADE_BASE){
-            degats = 0;
+            degats = 5;
         }
         else if(parade >=90){
             degats = degats+ 10;
