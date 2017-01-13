@@ -4,6 +4,8 @@ import model.ModelHero;
 import model.ModelMob;
 import view.Fenetre;
 import view.FenetreJeu;
+import java.util.Random;
+
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
