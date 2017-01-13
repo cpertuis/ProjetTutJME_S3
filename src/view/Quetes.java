@@ -3,6 +3,7 @@ package view;
 
 import controller.ControlButtonQuetes;
 import model.ModelHero;
+import model.ModelPnj;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,16 +18,22 @@ public class Quetes extends JFrame {
     public JButton buttonExit;
     public JButton abandon;
     ControlButtonQuetes controlButtonQuetes;
+    public ModelPnj pnj1;
+    public ModelPnj pnj2;
+    public ModelPnj pnj3;
 
-    public Quetes(ModelHero modelHero){
+    public Quetes(ModelHero modelHero,ModelPnj _pnj1,ModelPnj _pnj2, ModelPnj _pnj3){
         this.modelHero=modelHero;
+        pnj1=_pnj1;
+        pnj2=_pnj2;
+        pnj3=_pnj3;
         initAttribut();
         createWidget();
         setResizable(false);
         setVisible(false);
         setSize(300, 150);
         setLocationRelativeTo(null);
-        controlButtonQuetes = new ControlButtonQuetes(this);
+        controlButtonQuetes = new ControlButtonQuetes(this,fenetreJeu);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
@@ -71,7 +78,7 @@ public class Quetes extends JFrame {
         setVisible(false);
         setSize(300, 150);
         setLocationRelativeTo(null);
-        controlButtonQuetes = new ControlButtonQuetes(this);
+        controlButtonQuetes = new ControlButtonQuetes(this,fenetreJeu);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 }
