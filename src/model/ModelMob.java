@@ -83,6 +83,7 @@ public class ModelMob extends ModelEntite{
                 setMagie(20);
     		default:
     			this.classe = Type.BASEMOB;
+                image = "img/goblin.png";
     			vieMax = 100;
                 vie = vieMax;
                 setDefenceMag(2);
