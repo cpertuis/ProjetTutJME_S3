@@ -62,7 +62,6 @@ public class ControlBoutonCombat implements ActionListener{
                 d.showOptionDialog(null,message,"Victoire",JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE,null,options,options[0]);
                 if(mMob.getClasse() == mHero.queteCourante.getMob().getClasse()){
                     mHero.queteCourante.updateQuete();
-                    System.out.println(mHero.queteCourante.getSuccess());
                 }
             } else {
                 fenetre.dispose();
