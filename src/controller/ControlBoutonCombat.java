@@ -75,6 +75,17 @@ public class ControlBoutonCombat implements ActionListener{
 		  if (actionEvent.getActionCommand().equals("Parade")){
 			degats = modelCombat.parade(degats);
 		}
-	  }  
+		if(actionEvent.getActionCommand().equals("Encaisser")){
+			degats = degats-1;
+		}  
+		mHero.perteVie(degats);
+		nomLabel.setText(nomLabel.getText()+"\nVous perdez "+ degats+" depoints de vie.");
+		if(mHero.estMort()){
+			fenetreJeu = new Fenetre(mMob, mHero,3);
+			break;
+		}
+		else{
+			fenetreJeu = new Fenetre(mMob,mHero,1,nomLabel);
+		}
     }
 }
