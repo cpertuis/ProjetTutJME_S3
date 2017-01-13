@@ -32,13 +32,13 @@ public class ControlBoutonCombat implements ActionListener{
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == fenetre.attaquePhy || actionEvent.getSource() == fenetre.attaqueMag) {
 
-            if (actionEvent.getActionCommand().equals("Attaque Physique")) {
+            if (actionEvent.getSource() == fenetre.attaquePhy ) {
                 degats = modelCombat.attaquePhy(mHero);
                 System.out.println(degats);
                 degats = modelCombat.defencePhy(degats, mMob);
 
             }
-            if (actionEvent.getActionCommand().equals("Attaque Magique")) {
+            if (actionEvent.getSource() == fenetre.attaqueMag) {
                 degats = modelCombat.attaqueMag(mHero);
                 System.out.println(degats);
                 degats = modelCombat.defenceMag(degats, mMob);
