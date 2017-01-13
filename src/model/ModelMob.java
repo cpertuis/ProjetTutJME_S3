@@ -56,6 +56,7 @@ public class ModelMob extends ModelEntite{
                 setMagie(10);
     		case 2:
     			this.classe = Type.BANDIT;
+                image = "img/bandit.png";
     			vieMax = 500;
                 vie = vieMax;
                 setDefenceMag(20);
@@ -64,6 +65,7 @@ public class ModelMob extends ModelEntite{
                 setMagie(15);
     		case 3:
     			this.classe = Type.TREANT;
+                image = "img/treant.png";
     			vieMax = 1500;
                 vie = vieMax;
                 setDefenceMag(2);
@@ -71,7 +73,8 @@ public class ModelMob extends ModelEntite{
                 setForce(10);
                 setMagie(10);
     		case 4:
-    			this.classe = Type.BOSS;	
+    			this.classe = Type.BOSS;
+                image = "img/dragon.png";
     			vieMax = 2000;
                 vie = vieMax;
                 setDefenceMag(20);

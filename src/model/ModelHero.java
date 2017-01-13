@@ -54,6 +54,7 @@ public class ModelHero extends ModelEntite {
             switch (i){
                 case 1 :
                     classe = Classe.ASSASSIN;
+                    image = "img/assassin.png";
                     vieMax = 300;
                     vie = vieMax;
                     setDefenceMag(10);
@@ -63,6 +64,7 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 2 :
                     classe = Classe.GUERRIER;
+                    image = "img/guerrier.png";
                     vieMax = 500;
                     vie = vieMax;
                     setDefenceMag(15);
@@ -72,6 +74,7 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 3 :
                     classe = Classe.MAGE;
+                    image = "img/mage.png";
                     vieMax = 250;
                     vie = vieMax;
                     setDefenceMag(15);
@@ -81,6 +84,7 @@ public class ModelHero extends ModelEntite {
                     break;
                 case 4 :
                     classe = Classe.TRAVELERS;
+                    image = "img/traveler.png";
                     vieMax = 350;
                     vie = vieMax;
                     setDefenceMag(10);
