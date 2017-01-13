@@ -48,15 +48,15 @@ public class ControlButtonFenetre implements ActionListener {
         if (actionEvent.getActionCommand().equals("Combattre")){
         	if(actionEvent.getSource()== fenetreJeu.bInteractionCampement){
         		ModelMob mob = new ModelMob("Goblin",5, ModelEntite.Genre.HOMME);
-            	Fenetre fen = new Fenetre(mob,mHero,1);
+            	new Fenetre(mob,mHero,1);
         	}
         	if(actionEvent.getSource()== fenetreJeu.bInteractionCaverne){
         		ModelMob mob = new ModelMob("Dragon",4, ModelEntite.Genre.HOMME);
-                Fenetre fen = new Fenetre(mob,mHero,1);
+            	new Fenetre(mob,mHero,1);
         	}
         	if(actionEvent.getSource()== fenetreJeu.bInteractionForet){
         		ModelMob mob = new ModelMob("Treant",3, ModelEntite.Genre.NONDEF);
-                Fenetre fen = new Fenetre(mob,mHero,1);
+            	new Fenetre(mob,mHero,1);
         	}
         }
         if(actionEvent.getActionCommand().equals("Sauver")){
@@ -73,7 +73,7 @@ public class ControlButtonFenetre implements ActionListener {
     }
 
     public void afficherQuetes(){
-        Quetes quetes = new Quetes(this.mHero);
+        Quetes quetes = new Quetes(this.mHero,fenetreJeu.pnj1,fenetreJeu.pnj2,fenetreJeu.pnj3);
         quetes.display();
     }
 
